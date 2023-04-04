@@ -1,0 +1,300 @@
+---
+title: "LaTeX 101 - An Introduction"
+author: "Victor Gambarini, (Jens Brinkmann)"
+institute: "The University of Auckland"
+date: today
+# bibliography: refs.bib
+from: markdown+emoji
+format:
+  revealjs:
+    
+    theme: robot-lung2.scss
+    # css: ./logo.css
+    # disableLayout: true
+    navigation-mode: vertical
+    controls-layout: bottom-right
+    controls-tutorial: true
+    # transition: convex
+    width: 1600
+    height: 900
+    background-image: ./ResBaz_transparent_Logo_cropped.svg
+    # background-opacity: 0.5
+    # background-position: bottom 10px right 20px
+    # background-size: contain
+    # data-background-repeat: no-repeat
+    # background-size: 80px
+    # background-repeat: no-repeat
+    # background-position: 0% 100%
+    # logo: ./ResBaz_transparent_cropped.svg
+    # self_contained: false
+    # reveal_plugins: ["menu"]
+    # reveal_options:
+    #   menu:
+    #     numbers: true
+--- 
+
+
+
+# What is $\LaTeX$ 
+- Pronounciation: /ˈlɑːtɛk/ or /ˈleɪtɛk/ 
+- $\LaTeX$ is a typesetting system and has been around for almost 40 years (since 1984)
+- While seeming quite nerdy, (rather) recent ways of interacting with it make it more user-friendly and approchable
+- Think of it as **doing some programming to get some neat pdf output**, many editors require compiling (press a button and wait)
+
+
+The name TeX is intended by its developer to be $\tau \epsilon \chi$, TeX is an abbreviation of τέχνη (ΤΕΧΝΗ technē), Greek for both "art" and "craft", which is also the root word of technical.
+
+# What is so special about $\LaTeX$
+- It separates content from formatting, letting you focus on writing and fiddling 🥸 
+- Cross-platform compatibility
+- There is a wide community and often several ways to get things done. It is rare that you are the first to ask a question. 
+- Most of the (good) books, journal articles, etc. are created using $\LaTeX$ 
+- At this year's ResBaz, we have two more advanced sessions LINK A LINK B run by Eirian. She is a $\LaTeX$ **superstar**. Think of our current session the foundation.
+
+# Showing off how cool it is
+
+[Focused ion beam system](https://www.overleaf.com/project/64239dbbe3b2710222c48e26)
+Author: Clemens Helfmeier
+[spherical and cartesian grids](https://texample.net/tikz/examples/spherical-and-cartesian-grids/) 
+[spherical and cartesian grids on overleaf](https://www.overleaf.com/project/64239faae3b2710222c4ccbe)
+
+Video Snippet: Change from 2 column to one column, remove the draft text, start hand-writing a complicated math equation and then get it into $\LaTeX$, 
+
+TikZ for [network visalisation](https://tikz.net/wp-content/uploads/2021/12/neural_networks-001.png) (vs. think about drawing/highlighting lines by hand/wysiwyg) 
+
+Change some csv downloaded from somewhere and get it to update
+
+Get from one design to another. Maybe even a Beamer presentation, but that's not really applicable. 
+
+Workflow for changing things in citations (Zotero) or getting a citation from a paper (three steps and done), backed up to GitHub, don't worry
+
+Update a picture to the latest version, keep the name, don't worry about overwriting, because you have it on GitHub
+
+Because of [LaTeXIt](https://www.chachatelier.fr/latexit/) knowing the syntax can help you with creating vis. for your PowerPoint, Slides, ... Presentation
+
+[Syntax highlighting for code](https://github.com/olivierverdier/python-latex-highlighting)
+
+Change a caption on several figures, update the ToC,...
+
+
+## Advantages
+
+:::{.callout-note}
+There is a trade-off between time invested upfront (learning $\LaTeX$ etc. vs. and time saved in the long-run. As many of you might work on their PhD thesises, this time balance one day before the deadline vs. some hours or days can't be traded-off 1:1
+:::
+
+- (good) $\LaTeX$ output **looks epic** (at least in most cases)
+  - it decides where pictures are placed
+  - maths is neatly rendered
+  - how line-breaks happen (justify text is using a dictionary for line-breaks, unlike many [wysiwyg](https://en.wikipedia.org/wiki/WYSIWYG) editors)
+  - multi-column layouts on one page
+
+## Advantages - continued
+- it is free and not tied to any big corporation, you can often write in any text editor, browser etc. 
+- it is no closed source file (unlike a *.docx* or so) this means we can use Git(Hub) EXAMPLE and other version control systems (we can run things like a `diff` on it, EXAMPLE CODE GOES HERE)
+  - no proprietary software that 
+    - might disappear from the market
+    - charges you an arm and a leg especially over time with a subscription model (yes, I am looking at you, Adobe) 
+    - means you can keep this compeltely offline/local/no-cloud, etc. good for Ethics Approvals and sensitive data, ...
+- you can mostly get outputs to several outputs with altering a few lines (vs. clicking on every slide or here and there)
+
+## Advantages - continued
+- you can customise it heavily
+- you can have inline comments (for future you, for your supervisor, to toggle things on/off)
+- If you ingest some code, tables, data, a lot of figures [ResBaz Workshop Python for image manipulation and repeatable research pipelines](), you will learn to love $\LaTeX$ 
+- Referencing is quite easy, especially if paired with a reference manager such as Zotero, see ResBaz session [Managing References With Zotero](link)
+- Maths!  $f_{c}=z^{2}+c$ AND [Mathpix Snipping](https://mathpix.com/)
+- Plotting (again some learning curve, but no Excel to Word to something schenanigans where you might miss out the latest version of a file and try to publish something wrong)
+- same goes for citations, referencing figures, placing figures (yes, you can specify that it shall be right there where you want it, but you can also let $\LaTeX$ work it's magic)
+- Portability: LaTeX documents are portable and can be easily converted to other formats, such as PDF, HTML, or EPUB.
+
+## Disadvantages
+- it takes time to learn (Overleaf and other more relevant UI etc. make it easier)
+- it can be very fiddely (if you want specifics with tables, or placing images)
+- the collaboration features are quite limited out of the box, yes, a lot can be done (see Eirian), but that mostly requires you to a) bring/acquire some coding knowledge, b) invest time; here, MS Word Clearly wins
+- plugins such as Grammarly don't work ootb, for VSCode, you can integrate these as an Extension, on Overleaf there is a [buggy workaround](https://www.overleaf.com/learn/how-to/Use_Grammarly_with_Overleaf)
+
+# Where to get started
+- download the whole package for Win, Linux, OSX (x TB)
+- quarto
+- overleaf
+
+# Alternatives
+- the ususal suspects: Microsoft Word, Google Doc, Libre/Open/... Office
+  - these are wysiwyg (what you see is what you get)/gui-based, point, click, change. 
+  - their benefits are usually that many not-so-techy people use them and can colleaborate
+  - some things are quite efficient (Tables, for examples, but we'll provide you with some neat workarounds) especially the tracking of changes in MSWord and placing images. Yes, if you want to mock up a layout point-and-click it usually a lot quicker
+- Plain text editors
+- Quarto (next slide)
+
+- Quarto which has also a session. 
+  - It can be understood as a meta-version of $\LaTeX$, Quarto was used to create this deck of slides, it can also handle a lot of code. There are approaches where you can get some (rudimentary) Python code into LaTeX, even into Overleaf, but these are mainly for handling several files (batch processing) keeping track of Python version, etc. is a challenge in itself and that's why Quarto is great if you need to get code
+  - Quarto is like a combined thing where you write in another language (markdown; markup vs. markdown comparison) and here are some neat examples blatantly copied by Quinn Asena showing off what can be done (on a side-note, you can write in md then convert to latex etc)
+- [This is why!](https://quinnasena.github.io/resbaz2022/template_complete.html)
+
+- [And this](https://www.apreshill.com/blog/2022-04-we-dont-talk-about-quarto/)
+
+- [But is it taking over?](https://yihui.org/en/2022/04/quarto-r-markdown/)
+
+- [Generate a citable DOI](https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content) and use for supplimentary information 
+
+- Reproducibility: whole workflow from data to results in one place. 
+
+- Host a live link consistent with current results (no more copy paste 7 plots into a word doc each time you change something!)
+
+- Coding colaborators can contribute via a Git workflow
+
+- Communicate results to non-coding collaborators
+
+- Writing in Quarto  uses [markdown syntax](https://quarto.org/docs/authoring/markdown-basics.html) 
+- LaTeX is used to render PDFs so LaTeX commands can be used for PDF outputs
+
+# Example: How does a Thesis look?
+MY POLISHED EXAMPLE
+big points:
+- preamble (like in coding where you load your libraries, define your colours and other settings, define what output you want (A3 or A4, one or two columns, ... and if you don't manually *tweak it*, you can be pretty sure that you will get a neat layout even by switching between single and multi columns just by changing a few digits))
+
+# Trying to make your $\LaTeX$ journey easier
+- Template
+  - not just to get the design
+  - also to see how things are done
+  - there are a few temaples of [Overleaf by the UoA](https://www.overleaf.com/edu/aucklanduni#templates)
+- input pdf without the file path and name which it does by default, or with the file name if wanted
+- toggle draft vs. not draft
+- [TablesGenerator](https://www.tablesgenerator.com/) and or [LaTeXTables](https://www.latex-tables.com/)
+- [Mathpix Snip](https://mathpix.com/)
+- [LaTeXIt](https://www.chachatelier.fr/latexit/latexit-downloads.php?lang=en) (to quickly create equations)
+- If not wanting Quarto, ingesting Markdown and using Pandoc to create LaTeX or DocX (to give to your non-techy colleague, ...)
+
+# Include something else
+The standard tools to insert a LATEX file into another are \input and \include.
+input command
+\input{filename} Use this command in the document body to insert the contents of another file named filename.tex; this file should not contain any LATEX preamble code (i.e. no \documentclass, \begin{document} or \end{document} ). LATEX won't start a new page before processing the material in filename.tex. \input allows you to nest \input commands, in files that are already being inputted by the root file.
+
+include command
+\include{filename} Use this command in the document body to insert the contents of another file named filename.tex;
+
+
+# Pointers to other closely related sessions
+- the two other $\LaTeX$ sessions
+- Quarto
+- Zotero and then https://retorque.re/zotero-better-bibtex/
+
+Symbols are usually really easy
+M\={a}ori 
+Macrons [more advanced approach](https://jevonsnotes.wordpress.com/2013/03/22/maori-macrons-and-latex/) where you type Māori (so on a Mac use the long-press option ā to write Māori or change the keyboard style)
+
+
+Displaystyle $$\sum_{n=1}^{\infty} \frac{1}{n}$$ vs $\sum_{n=1}^{\infty} \frac{1}{n}$
+
+
+
+
+
+:::{.callout-tip}
+# Here I give a title to my box
+this is a hint
+:::
+
+
+# code blocks
+Code is executed when the document is rendered. Code blocks can also be executed individually just like regular R markdown if you are already familiar with that. Code blocks are inserted like this:
+```{r}
+#| echo: fenced
+6*7
+```
+
+# code block execution option
+
+Code block execution options options are set with a special comment: `#| ` (white space sensitive!). [Block options](https://quarto.org/docs/computations/execution-options.html) determine how the code is executed, e.g., whether to display the code block: `#| echo: true`, warning messages `#| warning: false`, and to input captions `#| fig-cap: "A really good figure caption!"`.
+
+
+# inline code
+
+Code can also be executed inline:
+
+```{r}
+#| echo: false
+#| results: asis
+cat("``` markdown\n")
+cat("Seven times six is `r 7 * 6`")
+cat("\n```")
+```
+
+[execution options](https://quarto.org/docs/computations/execution-options.html) and edit the existing code block options in the 'Libraries section' to:
+
+ - display the results
+
+ - exclude the code
+
+ - include a figure caption
+
+ - render the document and hit the :heavy_check_mark: in zoom
+:::
+
+
+- Tables can be displayed using code: [tables in R markdown](https://rstudio.github.io/distill/tables.html); or [markdown](https://pandoc.org/MANUAL.html#tables).
+
+- There are helpful ways of generating markdown tables online: [Markdown table generator](https://www.tablesgenerator.com/markdown_tables); and in [RStudio](https://rstudio.github.io/visual-markdown-editing/#editor-toolbar).
+
+<!-- ## tabsets {.scrollable}
+
+Ok now the feature I find *very* useful: tabsets. Tabsets are great for showing, multiple results, data, code, whatever you want in tabs. Say, you want to show the plot on one tab and the model output table in the next, or multiple related plots. Much easier to read and flick among results than a long stream of plots and tables.
+
+:::{.panel-tabset}
+# Code
+```{r tabsetPlot}
+#| echo: true
+if (!require("pacman")) install.packages("pacman", repos="http://cran.r-project.org")
+pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
+# From: https://allisonhorst.github.io/palmerpenguins/articles/examples.html
+mass_flipper <- ggplot(data = penguins,
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g)) +
+  geom_point(aes(color = species,
+                 shape = species),
+             size = 3,
+             alpha = 0.8) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       color = "Penguin species",
+       shape = "Penguin species") +
+  theme_minimal() +
+  theme(legend.position = c(0.2, 0.7),
+        plot.title.position = "plot",
+)
+```
+
+# Data
+```{r}
+rmarkdown::paged_table(penguins[1:50,])
+```
+
+# Plot
+```{r}
+#| warning: false
+#| fig-cap: Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins from [Allison Horst](https://allisonhorst.github.io/palmerpenguins/articles/examples.html)
+#| fig-alt: Plot of penguin bill length against body mass by species
+#| fig-width: 12
+#| fig-height: 10
+mass_flipper
+```
+:::
+
+## tabset code -->
+
+Your Turn :computer:
+
+Tabsets are created with the following syntax:
+
+```
+:::{.panel-tabset}
+# Tab 1
+content
+
+# Tab 2
+content
+:::
+
+```
