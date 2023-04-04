@@ -14,7 +14,7 @@ format:
     navigation-mode: vertical
     controls-layout: bottom-right
     controls-tutorial: true
-    # transition: convex
+    transition: convex
     width: 1600
     height: 900
     background-image: ./ResBaz_transparent_Logo_cropped.svg
