@@ -15,8 +15,8 @@ format:
     # css: ./logo.css
     # disableLayout: true
     navigation-mode: vertical
-    # controls-layout: bottom-right
-    # controls-tutorial: true
+    controls-layout: bottom-right
+    controls-tutorial: true
     transition: convex
     width: 1600
     height: 900
@@ -30,10 +30,10 @@ format:
     # background-position: 0% 100%
     # logo: ResBaz_transparent_cropped.svg
     # self_contained: false
-    # reveal_plugins: ["menu"]
-    # reveal_options:
-    #   menu:
-    #     numbers: true
+    reveal_plugins: ["menu"]
+    reveal_options:
+      menu:
+        numbers: true
     # header: Quarto Presentations with beautiful slide decks made by RevealJs
     header-logo: ResBaz_transparent_cropped.svg
     filters:
