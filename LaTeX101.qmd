@@ -6,8 +6,7 @@ institute: "The University of Auckland"
 date: today
 # bibliography: refs.bib
 from: markdown+emoji
-embed-resources: false
-# format: 
+# embed-resources: false
 format:
   revealjs:
     
@@ -20,6 +19,7 @@ format:
     transition: convex
     width: 1600
     height: 900
+    margin: 0.2
     # background-image: ./ResBaz_transparent_Logo_cropped.svg
     # background-opacity: 0.5
     # background-position: bottom 10px right 20px
@@ -34,15 +34,27 @@ format:
     reveal_options:
       menu:
         numbers: true
-    # header: Quarto Presentations with beautiful slide decks made by RevealJs
+    header: ResBaz 2023 | Victor Gambarini | LaTeX 101
     header-logo: ResBaz_transparent_cropped.svg
     filters:
       - reveal-header
 --- 
 
+# test slide for $\LaTeX$ code
+```{latex}
+\preamble{anc}
+\textbf{bold text}
+normal text
 
+*text in italics*
+```
 
-# What is $\LaTeX$ 
+<!-- ```{python}
+import sys
+print(sys.executable)
+``` -->
+
+# What is $\LaTeX$ pip install nbformat nbclient
 - Pronounciation: /ˈlɑːtɛk/ or /ˈleɪtɛk/ 
 - $\LaTeX$ is a typesetting system and has been around for almost 40 years (since 1984)
 - While seeming quite nerdy, (rather) recent ways of interacting with it make it more user-friendly and approchable
@@ -59,7 +71,6 @@ The name TeX is intended by its developer to be $\tau \epsilon \chi$, TeX is an 
 - At this year's ResBaz, we have two more advanced sessions LINK A LINK B run by Eirian. She is a $\LaTeX$ **superstar**. Think of our current session the foundation.
 
 # Showing off how cool it is
-
 [Focused ion beam system](https://www.overleaf.com/project/64239dbbe3b2710222c48e26)
 Author: Clemens Helfmeier
 [spherical and cartesian grids](https://texample.net/tikz/examples/spherical-and-cartesian-grids/) 
@@ -121,40 +132,83 @@ There is a trade-off between time invested upfront (learning $\LaTeX$ etc. vs. a
 - the collaboration features are quite limited out of the box, yes, a lot can be done (see Eirian), but that mostly requires you to a) bring/acquire some coding knowledge, b) invest time; here, MS Word Clearly wins
 - plugins such as Grammarly don't work ootb, for VSCode, you can integrate these as an Extension, on Overleaf there is a [buggy workaround](https://www.overleaf.com/learn/how-to/Use_Grammarly_with_Overleaf)
 
-# Where to get started
-- download the whole package for Win, Linux, OSX (x TB)
-- quarto
-- overleaf
 
 # Alternatives
 - the ususal suspects: Microsoft Word, Google Doc, Libre/Open/... Office
   - these are wysiwyg (what you see is what you get)/gui-based, point, click, change. 
   - their benefits are usually that many not-so-techy people use them and can colleaborate
   - some things are quite efficient (Tables, for examples, but we'll provide you with some neat workarounds) especially the tracking of changes in MSWord and placing images. Yes, if you want to mock up a layout point-and-click it usually a lot quicker
-- Plain text editors
-- Quarto (next slide)
 
-- Quarto which has also a session. 
-  - It can be understood as a meta-version of $\LaTeX$, Quarto was used to create this deck of slides, it can also handle a lot of code. There are approaches where you can get some (rudimentary) Python code into LaTeX, even into Overleaf, but these are mainly for handling several files (batch processing) keeping track of Python version, etc. is a challenge in itself and that's why Quarto is great if you need to get code
-  - Quarto is like a combined thing where you write in another language (markdown; markup vs. markdown comparison) and here are some neat examples blatantly copied by Quinn Asena showing off what can be done (on a side-note, you can write in md then convert to latex etc)
-- [This is why!](https://quinnasena.github.io/resbaz2022/template_complete.html)
 
-- [And this](https://www.apreshill.com/blog/2022-04-we-dont-talk-about-quarto/)
 
-- [But is it taking over?](https://yihui.org/en/2022/04/quarto-r-markdown/)
 
-- [Generate a citable DOI](https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content) and use for supplimentary information 
+# How does creating a document in $\LaTeX$ work?
+- here some text
 
-- Reproducibility: whole workflow from data to results in one place. 
+## Preamble
+- here go some lines
 
-- Host a live link consistent with current results (no more copy paste 7 plots into a word doc each time you change something!)
+## Main body
+- here go some lines
 
-- Coding colaborators can contribute via a Git workflow
+## includes vs. something
+- here go some lines
 
-- Communicate results to non-coding collaborators
+# How to get $\LaTeX$
+- There are various options.
+- The following (non-exhaustive) list goes from minimalistic (bare-bones) to specific environments either executed locally on your machine or *in the cloud.*
 
-- Writing in Quarto  uses [markdown syntax](https://quarto.org/docs/authoring/markdown-basics.html) 
-- LaTeX is used to render PDFs so LaTeX commands can be used for PDF outputs
+## How to get $\LaTeX$ - the core
+Idea: As software-agnostic as possible
+- Download a $\LaTeX$ distribution, for example [MiKTeX](https://miktex.org/download)
+- install [pandoc](https://pandoc.org/installing.html)
+- use any texteditor 
+  - **Windows:** 
+    - Notepad
+  - **Mac:** 
+    - TextEdit
+  - **Linux:**
+    - various
+  - **Cross-Platform:** 
+    - [VSCode](https://code.visualstudio.com/)
+    - [Sublime](https://www.sublimetext.com/download) 
+- on the commandline: type `pandoc -i ~/Desktop/myWritings.tex -o ~/Desktop/MyRenderedLaTeX.pdf`
+- inspect your neatly renedered document
+
+## How to get $\LaTeX$ - special editors
+The idea is to have a local installation and a specialised editor
+- [Texifier](https://www.texifier.com/)
+- [TeXLive](https://www.tug.org/texlive/)
+- [TeXStudio](https://www.texstudio.org/)
+- [TeXMaker](https://www.xm1math.net/texmaker/)
+
+## How to get $\LaTeX$ - In the browser
+- [Overleaf](https://www.overleaf.com/) is quote famous for *bringing $\LaTeX to the masses*
+- A pro and con at the same time: It runs in the cloud, you don't need to install a $\LaTeX$ distribution, special editor, etc.
+- Recently, they added "Overleaf On-Premises" to circumvent privacy challenges
+- there is a **free plan** which might be a good fit for beginners or if it is just you wokring on a dcument
+- there are **paid plans**, including **student** plans which are currently NZD109/year
+  - The main advantages: 
+    - Invite collaborators, so work on the same document at the same time
+    - Have a similar tracking mechanism as MS Word's *Track Changes*
+    - Sync to Dropbox, GitHub, etc.
+ALTERNATVIELY: There is another ResBaz session: [Stop Paying for Free Software](https://resbaz.auckland.ac.nz/schedule/#session-082)
+
+## How to get $\LaTeX$ - The *meta* version
+[Quarto](https://quarto.org/) can be considered *one level above* in terms of abstraction ![text](rstudio-qmd-how-it-works.png)
+
+- $\LaTeX$ is just one of its output, the other benefit is a direct integration with **Python, R, Julia, Observable**
+- you can write in  [markdown syntax](https://quarto.org/docs/authoring/markdown-basics.html)  (.md) so for example `**my text**` (md notation) as oppsed to `\textbf{my text}`
+- the integration with code means you won't have to copy-paste results back and forth
+  - this point can't be stressed enough! You are so likely to forget updating a plot 
+  - you also get reproducability, because it isn't just a screen shot that is integrated into your document
+  <!-- (There are approaches where you can get some (rudimentary) Python code into LaTeX, even into Overleaf, but these are mainly for handling several files (batch processing) keeping track of Python version- Coding colaborators can contribute via a Git workflow
+- Communicate results to non-coding collaborators using git (e.g., [GitHub](https://github.com/))
+
+:::{.callout-tip}
+# On a side-note
+ This deck of slides (based on [RevealJS](https://revealjs.com/), it can also handle a lot of code. 
+:::
 
 # Example: How does a Thesis look?
 MY POLISHED EXAMPLE
@@ -198,110 +252,12 @@ Displaystyle $$\sum_{n=1}^{\infty} \frac{1}{n}$$ vs $\sum_{n=1}^{\infty} \frac{1
 
 
 
-:::{.callout-tip}
-# Here I give a title to my box
-this is a hint
-:::
 
 
-# code blocks
-Code is executed when the document is rendered. Code blocks can also be executed individually just like regular R markdown if you are already familiar with that. Code blocks are inserted like this:
-```{r}
-#| echo: fenced
-6*7
-```
 
-# code block execution option
-
-Code block execution options options are set with a special comment: `#| ` (white space sensitive!). [Block options](https://quarto.org/docs/computations/execution-options.html) determine how the code is executed, e.g., whether to display the code block: `#| echo: true`, warning messages `#| warning: false`, and to input captions `#| fig-cap: "A really good figure caption!"`.
-
-
-# inline code
-
-Code can also be executed inline:
-
-```{r}
-#| echo: false
-#| results: asis
-cat("``` markdown\n")
-cat("Seven times six is `r 7 * 6`")
-cat("\n```")
-```
-
-[execution options](https://quarto.org/docs/computations/execution-options.html) and edit the existing code block options in the 'Libraries section' to:
-
- - display the results
-
- - exclude the code
-
- - include a figure caption
-
- - render the document and hit the :heavy_check_mark: in zoom
-:::
 
 
 - Tables can be displayed using code: [tables in R markdown](https://rstudio.github.io/distill/tables.html); or [markdown](https://pandoc.org/MANUAL.html#tables).
 
 - There are helpful ways of generating markdown tables online: [Markdown table generator](https://www.tablesgenerator.com/markdown_tables); and in [RStudio](https://rstudio.github.io/visual-markdown-editing/#editor-toolbar).
 
-<!-- ## tabsets {.scrollable}
-
-Ok now the feature I find *very* useful: tabsets. Tabsets are great for showing, multiple results, data, code, whatever you want in tabs. Say, you want to show the plot on one tab and the model output table in the next, or multiple related plots. Much easier to read and flick among results than a long stream of plots and tables.
-
-:::{.panel-tabset}
-# Code
-```{r tabsetPlot}
-#| echo: true
-if (!require("pacman")) install.packages("pacman", repos="http://cran.r-project.org")
-pacman::p_load(ggplot2, palmerpenguins)    # Install & load packages
-# From: https://allisonhorst.github.io/palmerpenguins/articles/examples.html
-mass_flipper <- ggplot(data = penguins,
-                       aes(x = flipper_length_mm,
-                           y = body_mass_g)) +
-  geom_point(aes(color = species,
-                 shape = species),
-             size = 3,
-             alpha = 0.8) +
-  scale_color_manual(values = c("darkorange","purple","cyan4")) +
-  labs(x = "Flipper length (mm)",
-       y = "Body mass (g)",
-       color = "Penguin species",
-       shape = "Penguin species") +
-  theme_minimal() +
-  theme(legend.position = c(0.2, 0.7),
-        plot.title.position = "plot",
-)
-```
-
-# Data
-```{r}
-rmarkdown::paged_table(penguins[1:50,])
-```
-
-# Plot
-```{r}
-#| warning: false
-#| fig-cap: Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins from [Allison Horst](https://allisonhorst.github.io/palmerpenguins/articles/examples.html)
-#| fig-alt: Plot of penguin bill length against body mass by species
-#| fig-width: 12
-#| fig-height: 10
-mass_flipper
-```
-:::
-
-## tabset code -->
-
-Your Turn :computer:
-
-Tabsets are created with the following syntax:
-
-```
-:::{.panel-tabset}
-# Tab 1
-content
-
-# Tab 2
-content
-:::
-
-```

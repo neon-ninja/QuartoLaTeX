@@ -30,6 +30,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="LaTeX101_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="LaTeX101_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -320,9 +384,6 @@
       margin-right: 0; 
     }
   </style>
-  
-  <link href="LaTeX101_files/libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-  <script src="LaTeX101_files/libs/pagedtable-1.1/js/pagedtable.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -345,8 +406,22 @@ Victor Gambarini, (Jens Brinkmann)
 
   <p class="date">4/5/23</p>
 </section>
-<section id="what-is-latex" class="title-slide slide level1 center">
-<h1>What is <span class="math inline">\(\LaTeX\)</span></h1>
+<section id="test-slide-for-latex-code" class="title-slide slide level1 center">
+<h1>test slide for <span class="math inline">\(\LaTeX\)</span> code</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {latex} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>\preamble{anc}</span>
+<span id="cb1-2"><a href="#cb1-2"></a>\textbf{bold text}</span>
+<span id="cb1-3"><a href="#cb1-3"></a>normal text</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>*text in italics*</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<!-- ```{python}
+import sys
+print(sys.executable)
+``` -->
+</section>
+
+<section id="what-is-latex-pip-install-nbformat-nbclient" class="title-slide slide level1 center">
+<h1>What is <span class="math inline">\(\LaTeX\)</span> pip install nbformat nbclient</h1>
 <ul>
 <li>Pronounciation: /ˈlɑːtɛk/ or /ˈleɪtɛk/</li>
 <li><span class="math inline">\(\LaTeX\)</span> is a typesetting system and has been around for almost 40 years (since 1984)</li>
@@ -444,44 +519,104 @@ Victor Gambarini, (Jens Brinkmann)
 <li>plugins such as Grammarly don’t work ootb, for VSCode, you can integrate these as an Extension, on Overleaf there is a <a href="https://www.overleaf.com/learn/how-to/Use_Grammarly_with_Overleaf">buggy workaround</a></li>
 </ul>
 </section></section>
-<section id="where-to-get-started" class="title-slide slide level1 center">
-<h1>Where to get started</h1>
-<ul>
-<li>download the whole package for Win, Linux, OSX (x TB)</li>
-<li>quarto</li>
-<li>overleaf</li>
-</ul>
-</section>
-
 <section id="alternatives" class="title-slide slide level1 center">
 <h1>Alternatives</h1>
 <ul>
-<li><p>the ususal suspects: Microsoft Word, Google Doc, Libre/Open/… Office</p>
+<li>the ususal suspects: Microsoft Word, Google Doc, Libre/Open/… Office
 <ul>
 <li>these are wysiwyg (what you see is what you get)/gui-based, point, click, change.</li>
 <li>their benefits are usually that many not-so-techy people use them and can colleaborate</li>
 <li>some things are quite efficient (Tables, for examples, but we’ll provide you with some neat workarounds) especially the tracking of changes in MSWord and placing images. Yes, if you want to mock up a layout point-and-click it usually a lot quicker</li>
 </ul></li>
-<li><p>Plain text editors</p></li>
-<li><p>Quarto (next slide)</p></li>
-<li><p>Quarto which has also a session.</p>
-<ul>
-<li>It can be understood as a meta-version of <span class="math inline">\(\LaTeX\)</span>, Quarto was used to create this deck of slides, it can also handle a lot of code. There are approaches where you can get some (rudimentary) Python code into LaTeX, even into Overleaf, but these are mainly for handling several files (batch processing) keeping track of Python version, etc. is a challenge in itself and that’s why Quarto is great if you need to get code</li>
-<li>Quarto is like a combined thing where you write in another language (markdown; markup vs.&nbsp;markdown comparison) and here are some neat examples blatantly copied by Quinn Asena showing off what can be done (on a side-note, you can write in md then convert to latex etc)</li>
-</ul></li>
-<li><p><a href="https://quinnasena.github.io/resbaz2022/template_complete.html">This is why!</a></p></li>
-<li><p><a href="https://www.apreshill.com/blog/2022-04-we-dont-talk-about-quarto/">And this</a></p></li>
-<li><p><a href="https://yihui.org/en/2022/04/quarto-r-markdown/">But is it taking over?</a></p></li>
-<li><p><a href="https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content">Generate a citable DOI</a> and use for supplimentary information</p></li>
-<li><p>Reproducibility: whole workflow from data to results in one place.</p></li>
-<li><p>Host a live link consistent with current results (no more copy paste 7 plots into a word doc each time you change something!)</p></li>
-<li><p>Coding colaborators can contribute via a Git workflow</p></li>
-<li><p>Communicate results to non-coding collaborators</p></li>
-<li><p>Writing in Quarto uses <a href="https://quarto.org/docs/authoring/markdown-basics.html">markdown syntax</a></p></li>
-<li><p>LaTeX is used to render PDFs so LaTeX commands can be used for PDF outputs</p></li>
 </ul>
 </section>
 
+<section>
+<section id="how-does-creating-a-document-in-latex-work" class="title-slide slide level1 center">
+<h1>How does creating a document in <span class="math inline">\(\LaTeX\)</span> work?</h1>
+<ul>
+<li>here some text</li>
+</ul>
+</section>
+<section id="preamble" class="slide level2">
+<h2>Preamble</h2>
+<ul>
+<li>here go some lines</li>
+</ul>
+</section>
+<section id="main-body" class="slide level2">
+<h2>Main body</h2>
+<ul>
+<li>here go some lines</li>
+</ul>
+</section>
+<section id="includes-vs.-something" class="slide level2">
+<h2>includes vs.&nbsp;something</h2>
+<ul>
+<li>here go some lines</li>
+</ul>
+</section></section>
+<section>
+<section id="how-to-get-latex" class="title-slide slide level1 center">
+<h1>How to get <span class="math inline">\(\LaTeX\)</span></h1>
+<ul>
+<li>There are various options.</li>
+<li>The following (non-exhaustive) list goes from minimalistic (bare-bones) to specific environments either executed locally on your machine or <em>in the cloud.</em></li>
+</ul>
+</section>
+<section id="how-to-get-latex---the-core" class="slide level2">
+<h2>How to get <span class="math inline">\(\LaTeX\)</span> - the core</h2>
+<p>Idea: As software-agnostic as possible - Download a <span class="math inline">\(\LaTeX\)</span> distribution, for example <a href="https://miktex.org/download">MiKTeX</a> - install <a href="https://pandoc.org/installing.html">pandoc</a> - use any texteditor - <strong>Windows:</strong> - Notepad - <strong>Mac:</strong> - TextEdit - <strong>Linux:</strong> - various - <strong>Cross-Platform:</strong> - <a href="https://code.visualstudio.com/">VSCode</a> - <a href="https://www.sublimetext.com/download">Sublime</a> - on the commandline: type <code>pandoc -i ~/Desktop/myWritings.tex -o ~/Desktop/MyRenderedLaTeX.pdf</code> - inspect your neatly renedered document</p>
+</section>
+<section id="how-to-get-latex---special-editors" class="slide level2">
+<h2>How to get <span class="math inline">\(\LaTeX\)</span> - special editors</h2>
+<p>The idea is to have a local installation and a specialised editor - <a href="https://www.texifier.com/">Texifier</a> - <a href="https://www.tug.org/texlive/">TeXLive</a> - <a href="https://www.texstudio.org/">TeXStudio</a> - <a href="https://www.xm1math.net/texmaker/">TeXMaker</a></p>
+</section>
+<section id="how-to-get-latex---in-the-browser" class="slide level2">
+<h2>How to get <span class="math inline">\(\LaTeX\)</span> - In the browser</h2>
+<ul>
+<li><a href="https://www.overleaf.com/">Overleaf</a> is quote famous for <em>bringing $to the masses</em></li>
+<li>A pro and con at the same time: It runs in the cloud, you don’t need to install a <span class="math inline">\(\LaTeX\)</span> distribution, special editor, etc.</li>
+<li>Recently, they added “Overleaf On-Premises” to circumvent privacy challenges</li>
+<li>there is a <strong>free plan</strong> which might be a good fit for beginners or if it is just you wokring on a dcument</li>
+<li>there are <strong>paid plans</strong>, including <strong>student</strong> plans which are currently NZD109/year
+<ul>
+<li>The main advantages:
+<ul>
+<li>Invite collaborators, so work on the same document at the same time</li>
+<li>Have a similar tracking mechanism as MS Word’s <em>Track Changes</em></li>
+<li>Sync to Dropbox, GitHub, etc. ALTERNATVIELY: There is another ResBaz session: <a href="https://resbaz.auckland.ac.nz/schedule/#session-082">Stop Paying for Free Software</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="how-to-get-latex---the-meta-version" class="slide level2">
+<h2>How to get <span class="math inline">\(\LaTeX\)</span> - The <em>meta</em> version</h2>
+<p><a href="https://quarto.org/">Quarto</a> can be considered <em>one level above</em> in terms of abstraction <img data-src="rstudio-qmd-how-it-works.png" alt="text"></p>
+<ul>
+<li><span class="math inline">\(\LaTeX\)</span> is just one of its output, the other benefit is a direct integration with <strong>Python, R, Julia, Observable</strong></li>
+<li>you can write in <a href="https://quarto.org/docs/authoring/markdown-basics.html">markdown syntax</a> (.md) so for example <code>**my text**</code> (md notation) as oppsed to <code>\textbf{my text}</code></li>
+<li>the integration with code means you won’t have to copy-paste results back and forth
+<ul>
+<li>this point can’t be stressed enough! You are so likely to forget updating a plot</li>
+<li>you also get reproducability, because it isn’t just a screen shot that is integrated into your document &lt;!– (There are approaches where you can get some (rudimentary) Python code into LaTeX, even into Overleaf, but these are mainly for handling several files (batch processing) keeping track of Python version- Coding colaborators can contribute via a Git workflow</li>
+</ul></li>
+<li>Communicate results to non-coding collaborators using git (e.g., <a href="https://github.com/">GitHub</a>)</li>
+</ul>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>On a side-note</strong></p>
+</div>
+<div class="callout-content">
+<p>This deck of slides (based on <a href="https://revealjs.com/">RevealJS</a>, it can also handle a lot of code.</p>
+</div>
+</div>
+</div>
+</section></section>
 <section id="example-how-does-a-thesis-look" class="title-slide slide level1 center">
 <h1>Example: How does a Thesis look?</h1>
 <p>MY POLISHED EXAMPLE big points: - preamble (like in coding where you load your libraries, define your colours and other settings, define what output you want (A3 or A4, one or two columns, … and if you don’t manually <em>tweak it</em>, you can be pretty sure that you will get a neat layout even by switching between single and multi columns just by changing a few digits))</p>
@@ -517,7 +652,7 @@ The standard tools to insert a LATEX file into another are and
 <p> </p>
 </div>
 <div class="header-text">
-<p> </p>
+<p>ResBaz 2023 | Victor Gambarini | LaTeX 101</p>
 </div>
 <div class="sb-title">
 <p> </p>
@@ -706,7 +841,7 @@ The standard tools to insert a LATEX file into another are and
         height: 900,
 
         // Factor of the display size that should remain empty around the content
-        margin: 0.1,
+        margin: 0.2,
 
         math: {
           mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
@@ -735,44 +870,6 @@ The standard tools to insert a LATEX file into another are and
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
