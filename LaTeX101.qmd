@@ -1,10 +1,13 @@
 ---
 title: "LaTeX 101 - An Introduction"
+subtitle: "Research Bazar (ResBaz) 2023"
 author: "Victor Gambarini, (Jens Brinkmann)"
 institute: "The University of Auckland"
 date: today
 # bibliography: refs.bib
 from: markdown+emoji
+embed-resources: false
+# format: 
 format:
   revealjs:
     
@@ -12,12 +15,12 @@ format:
     # css: ./logo.css
     # disableLayout: true
     navigation-mode: vertical
-    controls-layout: bottom-right
-    controls-tutorial: true
+    # controls-layout: bottom-right
+    # controls-tutorial: true
     transition: convex
     width: 1600
     height: 900
-    background-image: ./ResBaz_transparent_Logo_cropped.svg
+    # background-image: ./ResBaz_transparent_Logo_cropped.svg
     # background-opacity: 0.5
     # background-position: bottom 10px right 20px
     # background-size: contain
@@ -25,12 +28,16 @@ format:
     # background-size: 80px
     # background-repeat: no-repeat
     # background-position: 0% 100%
-    # logo: ./ResBaz_transparent_cropped.svg
+    # logo: ResBaz_transparent_cropped.svg
     # self_contained: false
     # reveal_plugins: ["menu"]
     # reveal_options:
     #   menu:
     #     numbers: true
+    # header: Quarto Presentations with beautiful slide decks made by RevealJs
+    header-logo: ResBaz_transparent_cropped.svg
+    filters:
+      - reveal-header
 --- 
 
 

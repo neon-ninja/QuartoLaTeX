@@ -6,7 +6,9 @@
 <script src="LaTeX101_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="LaTeX101_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="LaTeX101_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="LaTeX101_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="LaTeX101_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="LaTeX101_files/libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
+<link href="LaTeX101_files/libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.269">
 
   <meta name="author" content="Victor Gambarini, (Jens Brinkmann)">
@@ -328,6 +330,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">LaTeX 101 - An Introduction</h1>
+  <p class="subtitle">Research Bazar (ResBaz) 2023</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -340,7 +343,7 @@ Victor Gambarini, (Jens Brinkmann)
     </div>
 </div>
 
-  <p class="date">4/4/23</p>
+  <p class="date">4/5/23</p>
 </section>
 <section id="what-is-latex" class="title-slide slide level1 center">
 <h1>What is <span class="math inline">\(\LaTeX\)</span></h1>
@@ -506,6 +509,20 @@ Victor Gambarini, (Jens Brinkmann)
 <h1>Include something else</h1>
 The standard tools to insert a LATEX file into another are and
 . input command Use this command in the document body to insert the contents of another file named filename.tex; this file should not contain any LATEX preamble code (i.e.&nbsp;no \documentclass,
+<div class="reveal-header">
+<div class="header-logo">
+<img data-src="ResBaz_transparent_cropped.svg">
+</div>
+<div class="sc-title">
+<p> </p>
+</div>
+<div class="header-text">
+<p> </p>
+</div>
+<div class="sb-title">
+<p> </p>
+</div>
+</div>
 </section>
     </div>
   </div>
@@ -546,10 +563,10 @@ The standard tools to insert a LATEX file into another are and
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: true,
+        controlsTutorial: false,
 
         // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'bottom-right',
+        controlsLayout: 'edges',
 
         // Visibility rule for backwards navigation arrows; "faded", "hidden"
         // or "visible"
@@ -664,7 +681,7 @@ The standard tools to insert a LATEX file into another are and
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'convex',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
@@ -680,9 +697,6 @@ The standard tools to insert a LATEX file into another are and
         // devices. It is advisable to set this to a lower number than
         // viewDistance in order to save resources.
         mobileViewDistance: 2,
-
-       // Parallax background image
-       parallaxBackgroundImage: './ResBaz_transparent_Logo_cropped.svg', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
 
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
