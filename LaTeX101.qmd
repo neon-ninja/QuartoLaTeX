@@ -41,7 +41,7 @@ format:
 --- 
 
 # test slide for $\LaTeX$ code
-```{latex}
+```{[latex]}
 \preamble{anc}
 \textbf{bold text}
 normal text
@@ -49,11 +49,18 @@ normal text
 *text in italics*
 ```
 
-<!-- ```{python}
-import sys
-print(sys.executable)
-``` -->
+# Some useful $\LaTeX$ commmands
+```{[latex]}
 
+see my intro text file
+- cite
+- comment
+- references
+- figures
+- tables
+- ...
+
+```
 # What is $\LaTeX$ pip install nbformat nbclient
 - Pronounciation: /ˈlɑːtɛk/ or /ˈleɪtɛk/ 
 - $\LaTeX$ is a typesetting system and has been around for almost 40 years (since 1984)
