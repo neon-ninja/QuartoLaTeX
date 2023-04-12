@@ -38,58 +38,125 @@ format:
     header-logo: ResBaz_transparent_cropped.svg
     filters:
       - reveal-header
+      - line-highlight
 --- 
 
-# test slide for $\LaTeX$ code
-```{[latex]}
-\preamble{anc}
-\textbf{bold text}
-normal text
 
-*text in italics*
-```
-
-# Some useful $\LaTeX$ commmands
-```{[latex]}
-
-see my intro text file
-- cite
-- comment
-- references
-- figures
-- tables
-- ...
-
-```
-# What is $\LaTeX$ pip install nbformat nbclient
+# What is $\LaTeX$ 
 - Pronounciation: /ˈlɑːtɛk/ or /ˈleɪtɛk/ 
 - $\LaTeX$ is a typesetting system and has been around for almost 40 years (since 1984)
-- While seeming quite nerdy, (rather) recent ways of interacting with it make it more user-friendly and approchable
+- While seeming quite *nerdy*, (rather) recent ways of interacting with it make it more user-friendly and approchable
 - Think of it as **doing some programming to get some neat pdf output**, many editors require compiling (press a button and wait)
 
 
 The name TeX is intended by its developer to be $\tau \epsilon \chi$, TeX is an abbreviation of τέχνη (ΤΕΧΝΗ technē), Greek for both "art" and "craft", which is also the root word of technical.
 
 # What is so special about $\LaTeX$
-- It separates content from formatting, letting you focus on writing and fiddling 🥸 
-- Cross-platform compatibility
-- There is a wide community and often several ways to get things done. It is rare that you are the first to ask a question. 
+- It separates **content** from **formatting**, letting you focus on writing and fiddling 🥸 
+- **Cross-platform** compatibility (Windows, Mac, Linux, iOS, ...)
+- There is a wide **community** and often several ways to get things done. It is rare that you are the first to ask a question. 
 - Most of the (good) books, journal articles, etc. are created using $\LaTeX$ 
 - At this year's ResBaz, we have two more advanced sessions LINK A LINK B run by Eirian. She is a $\LaTeX$ **superstar**. Think of our current session the foundation.
 
 # Showing off how cool it is
-[Focused ion beam system](https://www.overleaf.com/project/64239dbbe3b2710222c48e26)
-Author: Clemens Helfmeier
-[spherical and cartesian grids](https://texample.net/tikz/examples/spherical-and-cartesian-grids/) 
-[spherical and cartesian grids on overleaf](https://www.overleaf.com/project/64239faae3b2710222c4ccbe)
 
-Video Snippet: Change from 2 column to one column, remove the draft text, start hand-writing a complicated math equation and then get it into $\LaTeX$, 
 
-TikZ for [network visalisation](https://tikz.net/wp-content/uploads/2021/12/neural_networks-001.png) (vs. think about drawing/highlighting lines by hand/wysiwyg) 
 
-Change some csv downloaded from somewhere and get it to update
+## Visualisations in TikZ  
+Example showing the power of the [TikZ package](https://tikz.net/)
 
-Get from one design to another. Maybe even a Beamer presentation, but that's not really applicable. 
+## Visualisations in TikZ -1
+![Focused ion beam system, Author: Clemens Helfmeier](Visualisation in tikz.jpg)
+[Source](https://texample.net/tikz/examples/author/clemens-helfmeier/)
+
+## Visualisations in TikZ -2
+![2D Visualisation in TikZ](Simple Visualisation in tikz.jpg)
+[Source](https://tikz.net/perigals-dissection/)
+
+## Visualisations in TikZ -3
+![3D Visualisation in TikZ](3DVisInTikZ.jpg)
+[Source](https://tikz.net/differential-of-volume-cylindrical-coordinates/)
+
+## Visualisations in TikZ -4
+![(Neuronal) Network Visualisation in TikZ](NeuronalNetworksInTikZ.png)
+[Source](https://tikz.net/wp-content/uploads/2021/12/neural_networks-001.png)
+
+
+## Easily adjust from one to two column layouts
+
+::::{.columns}
+
+:::{.column width="50%"}
+```latex
+\documentclass[10pt,a4paper,onesided]{article} 
+\usepackage{lipsum}
+\begin{document}
+  \section{My Title}
+  \subsection{Sub-Section}
+  \textbf{Printing 1 to 3 paragraphs}\\
+  \lipsum[1-3]
+  \subsection{Sub-Section}
+  \lipsum[1]
+\end{document}
+```
+Note that: ...[onesided]{.fragment .fade-in}...
+![One Column](OneCol.jpg)
+
+
+:::
+
+:::{.column width="50%"}
+```latex
+#| \documentclass[10pt,a4paper,twocolumn]{article} 
+\usepackage{lipsum}
+\begin{document}
+  \section{My Title}
+  \subsection{Sub-Section}
+  \textbf{Printing 1 to 3 paragraphs}\\
+  \lipsum[1-3]
+  \subsection{Sub-Section}
+  \lipsum[1]
+\end{document}
+```
+Note that: ...[twocolumn]{.fragment .fade-in}...
+![Two Column](TwoCol.jpg)
+:::
+
+::::
+
+
+## Maths/Formulae
+
+::: {.r-stack}
+![](MSWordFormula.jpg){.fragment width="1200"}
+
+![](LaTeXIT.jpg){.fragment height="700"}
+
+![](MathPix.jpg){.fragment height="700"}
+:::
+
+<!-- <div class="r-stack">
+  <img class="fragment" src="MSWordFormula.jpg" width="1200">
+  <img class="fragment" src="LaTeXIT.jpg" width="300" height="450">
+  <img class="fragment" src="MathPix.jpg" height="700">
+</div> -->
+
+<!-- ![MSWord Formula Editor](MSWordFormula.jpg)
+<img src="MSWordFormula.jpg" width="300">
+  -->
+
+<!-- ```latex
+$$ \frac{a}{b}
+```
+
+![Mathpix]()
+[Mathpix Snipping](https://mathpix.com/) -->
+
+
+## External Files
+- You (usuall) reference external files; this means you might have a 'Images' folder. All updates (while maintaining the file name) come into effect quickly (after recompiling); consider a version control mechanism such as GitHub to avoid data loss
+- This also works for imported data (often in the csv file format) which you can get to [automatically update tables](https://tex.stackexchange.com/questions/146716/importing-csv-file-into-latex-as-a-table)
+- Even layouts can be changed 
 
 Workflow for changing things in citations (Zotero) or getting a citation from a paper (three steps and done), backed up to GitHub, don't worry
 
@@ -133,6 +200,15 @@ There is a trade-off between time invested upfront (learning $\LaTeX$ etc. vs. a
 - same goes for citations, referencing figures, placing figures (yes, you can specify that it shall be right there where you want it, but you can also let $\LaTeX$ work it's magic)
 - Portability: LaTeX documents are portable and can be easily converted to other formats, such as PDF, HTML, or EPUB.
 
+## Advantages - continued
+Symbols often render very neatly, sometimes workarounds are needed
+```latex
+M\={a}ori 
+```
+
+For Macrons [a more advanced approach is described here](https://jevonsnotes.wordpress.com/2013/03/22/maori-macrons-and-latex/), as Unicode is mostly used, you can type Māori (so on a Mac use the long-press option ā to write Māori or change the keyboard style) or copy-paste such characters. 
+
+
 ## Disadvantages
 - it takes time to learn (Overleaf and other more relevant UI etc. make it easier)
 - it can be very fiddely (if you want specifics with tables, or placing images)
@@ -148,18 +224,33 @@ There is a trade-off between time invested upfront (learning $\LaTeX$ etc. vs. a
 
 
 
-
 # How does creating a document in $\LaTeX$ work?
-- here some text
+While our current session is just a *taster Session*, some pointers at important elements follow below. 
+
 
 ## Preamble
-- here go some lines
+This is similar to programming where you start with importing relevant libraries (things others did to make your life easier) and definitions (for example, colours)
+
+```latex
+\documentclass[twoside,openright,a4paper]
+
+\usepackage[usenames, dvipsnames, table]{xcolor}
+
+\addbibresource{references.bib}
+
+\definecolor{uoadarkblue}{RGB}{0, 70, 127}
+```
+
 
 ## Main body
-- here go some lines
-
-## includes vs. something
-- here go some lines
+You can either
+- write all your document in one text file (with the file extension *.tex)
+- use the `\include` command
+```latex
+\include{Titlepage}
+\part{Background}
+\include{Chapters/Intro}
+```
 
 # How to get $\LaTeX$
 - There are various options.
@@ -199,7 +290,9 @@ The idea is to have a local installation and a specialised editor
     - Invite collaborators, so work on the same document at the same time
     - Have a similar tracking mechanism as MS Word's *Track Changes*
     - Sync to Dropbox, GitHub, etc.
+- UoA Bioengineering staff/students get Overleaf premium free
 ALTERNATVIELY: There is another ResBaz session: [Stop Paying for Free Software](https://resbaz.auckland.ac.nz/schedule/#session-082)
+
 
 ## How to get $\LaTeX$ - The *meta* version
 [Quarto](https://quarto.org/) can be considered *one level above* in terms of abstraction ![text](rstudio-qmd-how-it-works.png)
@@ -217,54 +310,25 @@ ALTERNATVIELY: There is another ResBaz session: [Stop Paying for Free Software](
  This deck of slides (based on [RevealJS](https://revealjs.com/), it can also handle a lot of code. 
 :::
 
-# Example: How does a Thesis look?
-MY POLISHED EXAMPLE
-big points:
-- preamble (like in coding where you load your libraries, define your colours and other settings, define what output you want (A3 or A4, one or two columns, ... and if you don't manually *tweak it*, you can be pretty sure that you will get a neat layout even by switching between single and multi columns just by changing a few digits))
 
 # Trying to make your $\LaTeX$ journey easier
-- Template
-  - not just to get the design
-  - also to see how things are done
-  - there are a few temaples of [Overleaf by the UoA](https://www.overleaf.com/edu/aucklanduni#templates)
-- input pdf without the file path and name which it does by default, or with the file name if wanted
-- toggle draft vs. not draft
+- Template 
+  - Resulting in a neat design (including page numbers in roman, arabic or intentionally omitted)
+  - Shows how to get certain things done (Part, Section, Sub-Section, labels,...)
+  - There are other templates of [Overleaf by the UoA](https://www.overleaf.com/edu/aucklanduni#templates)
 - [TablesGenerator](https://www.tablesgenerator.com/) and or [LaTeXTables](https://www.latex-tables.com/)
 - [Mathpix Snip](https://mathpix.com/)
 - [LaTeXIt](https://www.chachatelier.fr/latexit/latexit-downloads.php?lang=en) (to quickly create equations)
-- If not wanting Quarto, ingesting Markdown and using Pandoc to create LaTeX or DocX (to give to your non-techy colleague, ...)
+- You can write in Markdown notation and use [Pandoc](https://pandoc.org/) to convert to $\LaTeX$ or MSWord *.docx (which you can easily pass to strict Word users)
 
-# Include something else
-The standard tools to insert a LATEX file into another are \input and \include.
-input command
-\input{filename} Use this command in the document body to insert the contents of another file named filename.tex; this file should not contain any LATEX preamble code (i.e. no \documentclass, \begin{document} or \end{document} ). LATEX won't start a new page before processing the material in filename.tex. \input allows you to nest \input commands, in files that are already being inputted by the root file.
-
-include command
-\include{filename} Use this command in the document body to insert the contents of another file named filename.tex;
 
 
 # Pointers to other closely related sessions
 - the two other $\LaTeX$ sessions
 - Quarto
 - Zotero and then https://retorque.re/zotero-better-bibtex/
-
-Symbols are usually really easy
-M\={a}ori 
-Macrons [more advanced approach](https://jevonsnotes.wordpress.com/2013/03/22/maori-macrons-and-latex/) where you type Māori (so on a Mac use the long-press option ā to write Māori or change the keyboard style)
+- Visualisations (Plots), see other session
+- Version Control (GitHub) is efficient as $\LaTeX$ uses plain text files, comparisons (diff) work on this, while they wouldn't on a proprietary MSWord *.docx file
 
 
-Displaystyle $$\sum_{n=1}^{\infty} \frac{1}{n}$$ vs $\sum_{n=1}^{\infty} \frac{1}{n}$
-
-
-
-
-
-
-
-
-
-
-- Tables can be displayed using code: [tables in R markdown](https://rstudio.github.io/distill/tables.html); or [markdown](https://pandoc.org/MANUAL.html#tables).
-
-- There are helpful ways of generating markdown tables online: [Markdown table generator](https://www.tablesgenerator.com/markdown_tables); and in [RStudio](https://rstudio.github.io/visual-markdown-editing/#editor-toolbar).
 
