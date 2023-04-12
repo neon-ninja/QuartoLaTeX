@@ -245,7 +245,14 @@ This is similar to programming where you start with importing relevant libraries
 ## Main body
 You can either
 - write all your document in one text file (with the file extension *.tex)
-- use the `\include` command
+- $\LaTeX$ commands usually start with the backslash character
+- as in all coding, it is important to close brackets that you have opened and to be quite picky with the details
+- $\LaTeX$ is mostely whitespace-insensitive, this means you can write your `.tex` document without having to worry about empty lines, etc. This also means, if you want to include empty lines, you have to enforce them 
+  - `\\` (two backslashes)
+  - `\newline`
+  - `\hfill \break`
+  - [see also](https://www.overleaf.com/learn/latex/Line_breaks_and_blank_spaces)
+- It is good practice not to create one huge `.tex` file but to use the `\include` command to include chapters
 ```latex
 \include{Titlepage}
 \part{Background}

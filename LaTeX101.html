@@ -617,7 +617,7 @@ $$ \frac{a}{b}
 </section>
 <section id="main-body" class="slide level2">
 <h2>Main body</h2>
-<p>You can either - write all your document in one text file (with the file extension *.tex) - use the <code>\include</code> command</p>
+<p>You can either - write all your document in one text file (with the file extension *.tex) - <span class="math inline">\(\LaTeX\)</span> commands usually start with the backslash character - as in all coding, it is important to close brackets that you have opened and to be quite picky with the details - <span class="math inline">\(\LaTeX\)</span> is mostely whitespace-insensitive, this means you can write your <code>.tex</code> document without having to worry about empty lines, etc. This also means, if you want to include empty lines, you have to enforce them - <code>\\</code> (two backslashes) - <code>\newline</code> - <code>\hfill \break</code> - <a href="https://www.overleaf.com/learn/latex/Line_breaks_and_blank_spaces">see also</a> - It is good practice not to create one huge <code>.tex</code> file but to use the <code>\include</code> command to include chapters</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource latex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1"></a><span class="bu">\include</span>{<span class="ex">Titlepage</span>}</span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="kw">\part</span>{Background}</span>
 <span id="cb5-3"><a href="#cb5-3"></a><span class="bu">\include</span>{<span class="ex">Chapters/Intro</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
