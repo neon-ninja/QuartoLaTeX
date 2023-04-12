@@ -4,6 +4,7 @@ subtitle: "Research Bazar (ResBaz) 2023"
 author: "Nelis Drost, (Jens Brinkmann)"
 institute: "The University of Auckland"
 date: today
+date-format: full
 # bibliography: refs.bib
 from: markdown+emoji
 # embed-resources: false
@@ -34,7 +35,7 @@ format:
     reveal_options:
       menu:
         numbers: true
-    header: ResBaz 2023 | Victor Gambarini | LaTeX 101
+    header: ResBaz 2023 | Nelis Drost, (Jens Brinkmann) | LaTeX 101
     header-logo: ResBaz_transparent_cropped.svg
     filters:
       - reveal-header
