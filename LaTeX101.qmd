@@ -1,7 +1,7 @@
 ---
 title: "LaTeX 101 - An Introduction"
 subtitle: "Research Bazar (ResBaz) 2023"
-author: "Nelis Drost, (Jens Brinkmann)"
+author: "Nelis Drost, Jens Brinkmann"
 institute: "The University of Auckland"
 date: today
 date-format: full
