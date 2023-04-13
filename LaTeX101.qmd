@@ -10,7 +10,7 @@ from: markdown+emoji
 # embed-resources: false
 format:
   revealjs:
-    
+    # number-sections: true
     theme: robot-lung2.scss
     # css: ./logo.css
     # disableLayout: true
@@ -41,7 +41,43 @@ format:
       - reveal-header
       - line-highlight
 --- 
+## Tables
 
+:::{.columns}
+
+:::{.column width="50%"}
+- A simple table in $\LaTeX$ looks like this:
+```latex
+\begin{table}[]
+\caption{My Example Table}
+\label{tab:my-table}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+country     & 1999   & 2999   &  &  \\ \hline
+Afghanistan & 745    & 2666   &  &  \\ \hline
+Brazil      & 37737  & 80488  &  &  \\ \hline
+China       & 212258 & 213766 &  &  \\ \hline
+\end{tabular}
+\end{table}
+```
+:::
+
+:::{.column width="50%"}
+- Alternatively using **markdown** syntax, it looks like this
+
+```markdown
+| country     | 1999   | 2999   |   |   |
+|-------------|--------|--------|---|---|
+| Afghanistan | 745    | 2666   |   |   |
+| Brazil      | 37737  | 80488  |   |   |
+| China       | 212258 | 213766 |   |   |
+```
+:::
+::::
+- To be honest: 
+  - Both are a pain to format by hand
+  - You shouldn't work with your data in these. These are for publishing only.
+  - [Some](https://datacarpentry.org/spreadsheet-ecology-lesson/00-intro/index.html#problems-with-spreadsheets) see spreadsheet software (MSExcel, Google Sheets, etc.) just suited for data entry, Python, R, OpenRefine, etc. are better alternatives whose learning curve isn't as steep as you might expect and relevant sessions are also provided at this year's ResBaz (see pointers)
 
 # What is $\LaTeX$ 
 - Pronounciation: /ˈlɑːtɛk/ or /ˈleɪtɛk/ 
@@ -83,7 +119,7 @@ Example showing the power of the [TikZ package](https://tikz.net/)
 [Source](https://tikz.net/wp-content/uploads/2021/12/neural_networks-001.png)
 
 
-## Easily adjust from one to two column layouts
+## Easily go from one to two column layouts
 
 ::::{.columns}
 
@@ -260,6 +296,11 @@ You can either
 \include{Chapters/Intro}
 ```
 
+## References, Appendices, etc.
+- all of these can be ingested (reference to external files) in the preamble
+- It's fair to consider this a strong-suit of $\LaTeX$
+- details exceed the scope of this introduction; more in-depth ResBaz sessions are offered (see @sec-pointers) and you can refer to the template provided
+
 # How to get $\LaTeX$
 - There are various options.
 - The following (non-exhaustive) list goes from minimalistic (bare-bones) to specific environments either executed locally on your machine or *in the cloud.*
@@ -331,12 +372,13 @@ ALTERNATVIELY: There is another ResBaz session: [Stop Paying for Free Software](
 
 
 
-# Pointers to other closely related sessions
+# Pointers to other closely related sessions {#sec-pointers}
 - the two other $\LaTeX$ sessions
 - Quarto
 - Zotero and then https://retorque.re/zotero-better-bibtex/
 - Visualisations (Plots), see other session
 - Version Control (GitHub) is efficient as $\LaTeX$ uses plain text files, comparisons (diff) work on this, while they wouldn't on a proprietary MSWord *.docx file
+- Spreadsheets only for data entry, but for 'data wrangling': Python, R, OpenRefine
 
 
 
