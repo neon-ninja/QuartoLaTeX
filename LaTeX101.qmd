@@ -46,14 +46,14 @@ format:
 :::{.columns}
 
 :::{.column width="50%"}
-- A simple table in $\LaTeX$ looks like this:
+- A simple table in $\LaTeX$ syntax:
 ```latex
 \begin{table}[]
 \caption{My Example Table}
 \label{tab:my-table}
 \begin{tabular}{|l|l|l|l|l|}
 \hline
-country     & 1999   & 2999   &  &  \\ \hline
+country     & 1999   & 2000   &  &  \\ \hline
 Afghanistan & 745    & 2666   &  &  \\ \hline
 Brazil      & 37737  & 80488  &  &  \\ \hline
 China       & 212258 & 213766 &  &  \\ \hline
@@ -63,10 +63,10 @@ China       & 212258 & 213766 &  &  \\ \hline
 :::
 
 :::{.column width="50%"}
-- Alternatively using **markdown** syntax, it looks like this
+- Alternatively using **markdown** syntax:
 
 ```markdown
-| country     | 1999   | 2999   |   |   |
+| country     | 1999   | 2000   |   |   |
 |-------------|--------|--------|---|---|
 | Afghanistan | 745    | 2666   |   |   |
 | Brazil      | 37737  | 80488  |   |   |
