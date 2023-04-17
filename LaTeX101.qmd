@@ -1,7 +1,7 @@
 ---
 title: "LaTeX 101 - An Introduction"
 subtitle: "Research Bazar (ResBaz) 2023"
-author: "Nelis Drost, Jens Brinkmann"
+author: "Nelis Drost, (Jens Brinkmann)"
 institute: "The University of Auckland"
 date: today
 date-format: full
@@ -41,43 +41,6 @@ format:
       - reveal-header
       - line-highlight
 --- 
-## Tables
-
-:::{.columns}
-
-:::{.column width="50%"}
-- A simple table in $\LaTeX$ syntax:
-```latex
-\begin{table}[]
-\caption{My Example Table}
-\label{tab:my-table}
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-country     & 1999   & 2000   &  &  \\ \hline
-Afghanistan & 745    & 2666   &  &  \\ \hline
-Brazil      & 37737  & 80488  &  &  \\ \hline
-China       & 212258 & 213766 &  &  \\ \hline
-\end{tabular}
-\end{table}
-```
-:::
-
-:::{.column width="50%"}
-- Alternatively using **markdown** syntax:
-
-```markdown
-| country     | 1999   | 2000   |   |   |
-|-------------|--------|--------|---|---|
-| Afghanistan | 745    | 2666   |   |   |
-| Brazil      | 37737  | 80488  |   |   |
-| China       | 212258 | 213766 |   |   |
-```
-:::
-::::
-- To be honest: 
-  - Both are a pain to format by hand
-  - You shouldn't work with your data in these. These are for publishing only.
-  - [Some](https://datacarpentry.org/spreadsheet-ecology-lesson/00-intro/index.html#problems-with-spreadsheets) see spreadsheet software (MSExcel, Google Sheets, etc.) just suited for data entry, Python, R, OpenRefine, etc. are better alternatives whose learning curve isn't as steep as you might expect and relevant sessions are also provided at this year's ResBaz (see pointers)
 
 # What is $\LaTeX$ 
 - Pronounciation: /ˈlɑːtɛk/ or /ˈleɪtɛk/ 
@@ -370,10 +333,48 @@ ALTERNATVIELY: There is another ResBaz session: [Stop Paying for Free Software](
 - [LaTeXIt](https://www.chachatelier.fr/latexit/latexit-downloads.php?lang=en) (to quickly create equations)
 - You can write in Markdown notation and use [Pandoc](https://pandoc.org/) to convert to $\LaTeX$ or MSWord *.docx (which you can easily pass to strict Word users)
 
+## Tables
+
+:::{.columns}
+
+:::{.column width="50%"}
+- A simple table in $\LaTeX$ syntax:
+```latex
+\begin{table}[]
+\caption{My Example Table}
+\label{tab:my-table}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+country     & 1999   & 2000   &  &  \\ \hline
+Afghanistan & 745    & 2666   &  &  \\ \hline
+Brazil      & 37737  & 80488  &  &  \\ \hline
+China       & 212258 & 213766 &  &  \\ \hline
+\end{tabular}
+\end{table}
+```
+:::
+
+:::{.column width="50%"}
+- Alternatively using **markdown** syntax:
+
+```markdown
+| country     | 1999   | 2000   |   |   |
+|-------------|--------|--------|---|---|
+| Afghanistan | 745    | 2666   |   |   |
+| Brazil      | 37737  | 80488  |   |   |
+| China       | 212258 | 213766 |   |   |
+```
+:::
+::::
+
+- To be honest: 
+  - Both are a pain to format by hand
+  - You shouldn't work with your data in these. These are for publishing only.
+  - [Some](https://datacarpentry.org/spreadsheet-ecology-lesson/00-intro/index.html#problems-with-spreadsheets) see spreadsheet software (MSExcel, Google Sheets, etc.) just suited for data entry, Python, R, OpenRefine, etc. are better alternatives whose learning curve isn't as steep as you might expect and relevant sessions are also provided at this year's ResBaz (see pointers)
 
 
 # Pointers to other closely related sessions {#sec-pointers}
-- the two other $\LaTeX$ sessions
+- the two(EDIT!) other $\LaTeX$ sessions
 - Quarto
 - Zotero and then https://retorque.re/zotero-better-bibtex/
 - Visualisations (Plots), see other session
