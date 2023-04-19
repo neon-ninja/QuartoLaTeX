@@ -37,6 +37,7 @@ format:
         numbers: true
     header: ResBaz 2023 | Nelis Drost, (Jens Brinkmann) | LaTeX 101
     header-logo: ResBaz_transparent_cropped.svg
+    hide-from-titleSlide: all
     filters:
       - reveal-header
       - line-highlight
@@ -332,6 +333,7 @@ ALTERNATVIELY: There is another ResBaz session: [Stop Paying for Free Software](
 - [Mathpix Snip](https://mathpix.com/)
 - [LaTeXIt](https://www.chachatelier.fr/latexit/latexit-downloads.php?lang=en) (to quickly create equations)
 - You can write in Markdown notation and use [Pandoc](https://pandoc.org/) to convert to $\LaTeX$ or MSWord *.docx (which you can easily pass to strict Word users)
+- As $\LaTeX$ is based on plain text files, you can use `diff` commands (see Git) or alternatively use [latexdiff](https://ctan.org/pkg/latexdiff?lang=en) which is better with interpreting the syntax and can highlight changes which are then output to a PDF
 
 ## Tables
 
