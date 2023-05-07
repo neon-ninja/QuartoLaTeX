@@ -33,7 +33,12 @@ $code-block-border-color: $body-color !default;
 #title-slide {
   text-align: left;
 
-  .subtitle,
+  .subtitle
+  {
+    font-style: italic;
+    // font-size: 80%;
+    color: #de1b1b;
+  }
   .institute,
   .quarto-title-affiliation,
   .quarto-title-author-email {
@@ -66,6 +71,19 @@ $code-block-border-color: $body-color !default;
     height: 3px;
     margin-bottom: 1em;
   }
+
+  .logo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    background-image: url('ResBaz_transparent_Logo_cropped.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 100px; /* adjust the size of the logo as needed */
+  }
+  
 
   // p, a {
   //   color: #7F7F7F;
