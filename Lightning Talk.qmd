@@ -172,22 +172,39 @@ import plotly.graph_objects as go
 
 
 # Create a box plot using Plotly
-fig = go.Figure(data=[go.Box(y=column_data,
+fig = go.Figure(data=[go.Box(y=df['Q3_1'],
                              boxpoints='all',   # can also be 'outliers', 'suspectedoutliers', or False
                              jitter=0.3,        # add some jitter for better separation between points
                              pointpos=-1.8      # relative position of points with respect to the box
                             )])
 
-fig.update_yaxes(range=[0, 100])  # Replace max(column_data) with the desired upper limit if needed
+# TO DO CHECK DOCS FOR UNITS
+# fig.update_yaxes(range=[0, 100])  # Replace max(column_data) with the desired upper limit if needed
+fig.update_layout(yaxis_range=[0,100])
 
+# mean_value_column_data = df['Q3_1'].mean()
+# df['Q3_1'].apply(type).value_counts()
+df['Q3_1'] = df['Q3_1'].astype(float)
+mean_value = df.Q3_1.mean()
+# print(df.Q3_1.mean())
+median_value = df.Q3_1.median()
 
-# Add horizontal lines for mean and median
-fig.add_trace(go.Scatter(x=[1], y=[mean_value], mode='lines+text', name='Mean', text=[f'Mean: {mean_value:.2f}']))
+# # Add horizontal lines for mean and median
+# fig.add_trace(go.Scatter(x=[1], y=[mean_value], mode='lines+text', name='Mean', text=[f'Mean: {mean_value:.2f}']))
 # fig.add_trace(go.Scatter(x=[1], y=[median_value], mode='lines+text', name='Median', text=[f'Median: {median_value:.2f}']))
-# fig.add_trace(go.Scatter(x=[1], y=[mean_value], mode='lines+text', name='Mean', text=[f'Mean: {str(mean_value):.2f}']))
-# fig.add_trace(go.Scatter(x=[1], y=[median_value], mode='lines+text', name='Median', text=[f'Median: {str(median_value):.2f}']))
 
-
+# give me a horizontal line indicating the mean value
+fig.add_shape(
+  type="line",
+  xref="paper", yref="y", x0=.5, y0=mean_value-4*stddev ,
+  x1=.7, y1=mean_value+4*stddev ,
+  color="#69b3a2")
+  # give me another one at the median value
+  fig.add_shape(
+      type="line",
+  xref="paper", yref="y", x0=.5, y0=median_value-4*stddev ,
+  x1=.7, y1=median_value+4*stddev ,
+  color="#69b3a2")
 
 # Show the box plot
 fig.show()
@@ -202,7 +219,7 @@ data = {'column_data': [1, 2, np.nan, 4, 5]}
 df = pd.DataFrame(data)
 
 # Calculate the mean for the "column_data" column
-mean_value_column_data = df['column_data'].mean()
+
 
 # Convert the mean value to a percentage and print it
 mean_value_percentage = mean_value_column_data * 100
