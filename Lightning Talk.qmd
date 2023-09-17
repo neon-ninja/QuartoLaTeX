@@ -1,0 +1,261 @@
+---
+title: "Lighning talk"
+subtitle: "Developing a Carpentries-style Machine Learning workshop"
+author: "Dr. Jens Brinkmann"
+institute: "The University of Auckland"
+# logo-container: "ResBaz_transparent_Logo_cropped.svg"
+date: 17/10/2023
+date-format: full
+# bibliography: refs.bib
+from: markdown+emoji
+# embed-resources: false
+format:
+  revealjs:
+    # number-sections: true
+    theme: robot-lung2 2.scss
+    # css: ./logo.css
+    # disableLayout: true
+    navigation-mode: vertical
+    controls-layout: bottom-right
+    controls-tutorial: true
+    transition: convex
+    width: 1600
+    height: 900
+    margin: 0.2
+    logo: "./UoALogoDarkBlueRGBLandscape.png"
+    # background-image: ./ResBaz_transparent_Logo_cropped.svg
+    # background-opacity: 0.5
+    # background-position: bottom 10px right 20px
+    # background-size: contain
+    # data-background-repeat: no-repeat
+    # background-size: 80px
+    # background-repeat: no-repeat
+    # background-position: 0% 100%
+    # logo: ResBaz_transparent_cropped.svg
+    # self_contained: false
+    reveal_plugins: ["menu"]
+    reveal_options:
+      menu:
+        numbers: true
+    header: Developing a Carpentries-style Machine Learning workshop 
+    # header-logo: UoALogoDarkBlueRGBLandscape.png
+    hide-from-titleSlide: all
+    filters:
+      - reveal-header
+      - line-highlight
+editor:
+  render-on-save: true
+--- 
+# to do
+- think about more visualisations
+- AI generated!
+- some more video snippets?
+- put a UoA banner and title on each slide (that was the plan of my GitHub Fork)
+
+
+
+# Intro
+
+- ML/AI are without a doubt a big topic
+- Empowering reserachers to use relevant approaches in their work is very rewarding, but also challenging
+- The Carpentries (LINK) offer a proven teaching style particularly targeted at participants with limited IT background
+  - core aspects are live-coding, a positive attitude not anticipating prerequirments and participant invovlement
+- The CeR (Centre for eResearch) at the University of Auckland acquired funding to further develop and run a series of workshops
+- These are referred to as ML-Carp
+- A significant deviation from the Carpentries material was the choice of Goolge Colab (picture) over local Python installs. The intention being: Focus efforts on the core/theory/underlying aspects of ML, avoid trouble-shooting and losing participants at various stages/during the workshop
+
+# Composition of the week-long half-day workshop
+
+- Afternoon 1 and 2: *Introduction to Python*
+  - an existing and iteratively refined set of lessons 
+- Afternoon 3 and 4: *Machine Learning*
+  - while the Carpentries Incubator shows various (competing/overlapping) lessons in early stage (pre-alpha, alpha) exist, none of these has emerged to a more mature status
+  - substantial rework was done (maybe show a git diff screenshot?)
+- Afternoon 5: Deep Learning
+  - a beta workshop existed in the Carpentries incubator
+  - some refinement (git diff?)
+
+# Run #1 (from day x to y)
+-  Mainly statistics here (40 people, pie chart what faculty, ...)
+-  takeaway message: various, most without background
+-  some quotes
+   -  very good
+   -  limited breaks
+   -  ...
+-  observation: Even at the very end of the sessions, questions, participantion and interest didn't cease
+
+## Metrics
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Pariticpants' Background
+```{python}
+import plotly.express as px
+import pandas as pd
+import plotly.io as pio
+
+# Read data from the CSV file
+df = pd.read_csv('./InputData.csv')
+df = df.drop([0, 1])
+df
+option_counts = df['Q1'].value_counts()
+# Create a DataFrame from the value_counts() result
+option_counts_df = pd.DataFrame({'Option': option_counts.index, 'Count': option_counts.values})
+
+# Display the result as a DataFrame
+# print(option_counts_df)
+
+fig = px.pie(option_counts_df, values='Count', names='Option')
+fig.update_layout(
+    # title="Pariticpants' Background",
+#     # xaxis_title="X Axis Title",
+#     # yaxis_title="Y Axis Title",
+#     # legend_title="Legend Title",
+    font=dict(
+        family="Courier New, monospace",
+        size=18,
+        # color="RebeccaPurple"
+    )
+)
+fig.show()
+```
+
+:::
+
+::: {.column width="50%"}
+Pariticpants' Operating Systems
+```{python}
+import plotly.express as px
+import pandas as pd
+import numpy as np
+import plotly.io as pio
+
+# Read data from the CSV file
+df = pd.read_csv('./InputData.csv')
+df = df.drop([0, 1])
+df
+option_counts = df['Q2'].value_counts()
+# Create a DataFrame from the value_counts() result
+option_counts_df = pd.DataFrame({'Option': option_counts.index, 'Count': option_counts.values})
+
+# Display the result as a DataFrame
+# print(option_counts_df)
+
+fig = px.pie(option_counts_df, values='Count', names='Option')
+fig.update_layout(
+    # title="Pariticpants' Background",
+#     # xaxis_title="X Axis Title",
+#     # yaxis_title="Y Axis Title",
+#     # legend_title="Legend Title",
+    font=dict(
+        family="Courier New, monospace",
+        size=18,
+        # color="RebeccaPurple"
+    )
+)
+fig.show()
+```
+
+:::
+
+::::
+
+
+
+## Plot 2
+```{python}
+
+import plotly.graph_objects as go
+# df.describe()
+
+
+
+# Create a box plot using Plotly
+fig = go.Figure(data=[go.Box(y=column_data,
+                             boxpoints='all',   # can also be 'outliers', 'suspectedoutliers', or False
+                             jitter=0.3,        # add some jitter for better separation between points
+                             pointpos=-1.8      # relative position of points with respect to the box
+                            )])
+
+fig.update_yaxes(range=[0, 100])  # Replace max(column_data) with the desired upper limit if needed
+
+
+# Add horizontal lines for mean and median
+fig.add_trace(go.Scatter(x=[1], y=[mean_value], mode='lines+text', name='Mean', text=[f'Mean: {mean_value:.2f}']))
+# fig.add_trace(go.Scatter(x=[1], y=[median_value], mode='lines+text', name='Median', text=[f'Median: {median_value:.2f}']))
+# fig.add_trace(go.Scatter(x=[1], y=[mean_value], mode='lines+text', name='Mean', text=[f'Mean: {str(mean_value):.2f}']))
+# fig.add_trace(go.Scatter(x=[1], y=[median_value], mode='lines+text', name='Median', text=[f'Median: {str(median_value):.2f}']))
+
+
+
+# Show the box plot
+fig.show()
+```
+
+```{python}
+import pandas as pd
+import numpy as np
+
+# Create a sample DataFrame with a column named "column_data" containing NaN values
+data = {'column_data': [1, 2, np.nan, 4, 5]}
+df = pd.DataFrame(data)
+
+# Calculate the mean for the "column_data" column
+mean_value_column_data = df['column_data'].mean()
+
+# Convert the mean value to a percentage and print it
+mean_value_percentage = mean_value_column_data * 100
+print("Mean for column 'column_data' as a percentage:", "{:.2f}%".format(mean_value_percentage))
+
+```
+# Reflection on Run #1 and adaption
+- The learning curve appeared too steep. From no coding to refined DL approaches in a few days appeared too challenging
+  - (some) Python knowledge was made a prerequisite for the Run #2. That hasn't lead to a decline in registrations
+  - Two (half) days of Python being removed from this run's curriculum freed up time to allow for more breaks, an even slower pace and answering more specific questions
+- End of the run shouldn't imply ceasing communication with (most) participants
+  - while some researchs continue to stay in touch with CeR after Run #1, to keep up the momentum of more participants, after the end of the workshop should be less of a cut and more 'faded out'
+    - A curated set of links for self-study was deemed too generic with an anticipated low continued interst in fully self-motivated  
+    - Slack sub channel with targeted support
+    - Kaggle?
+    - VSC and local Python/GPU/Nectar/... 
+  
+  # Comparing Run #1 and #2: What metrics and people say
+  - what the numbers say 
+    - more people signed up (word of mouth/positive experince being shared?)
+    - more of this and that
+  - what the pepole say
+    - instrcutors/organisers (for the sake of bervity no full quotes)
+      - better balance of topics (only ML, DL vs. having to cope with Python)
+    - participants
+      - ...
+
+# Outlook
+- while specific funding (for lesson preparation and delivery) has ended, the importance of the topic continues to increase
+- more sessions are planned
+- current Slack seems promising
+- the decision to teach Python at SW Carp was deemed good
+
+
+## Carbon_Dioxide
+
+```{python}
+import plotly.express as px
+import numpy
+
+import plotly.graph_objects as go
+
+labels = ['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen']
+values = [4500, 2500, 1053, 500]
+
+# pull is given as a fraction of the pie radius
+fig = go.Figure(data=[go.Pie(labels=labels, values=values, pull=[0, 0, 0.2, 0])])
+fig.show()
+```
+
+## Hydrogen
+
+```{python}
+fig = go.Figure(data=[go.Pie(labels=labels, values=values, pull=[0, 0.2, 0, 0])])
+fig.show()
+```

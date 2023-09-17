@@ -4,7 +4,7 @@
 
 
 // store hot pink in a variable
-$hotPink: #e84b11;
+$hotPink: #009AC7;
 // the color of the thick border surrounding the presention
 $borderColor: $hotPink;
 
@@ -65,7 +65,7 @@ $heading4Size: 1.4em;
 .line {
   content: '';
   position: fixed;
-  background: #e84b11;
+  background: #009AC7;
   z-index: 105; }
   .line.top {
     left: 0;
@@ -122,12 +122,12 @@ body {
 
 ::selection {
   color: #fff;
-  background: #e84b11;
+  background: #009AC7;
   text-shadow: none; }
 
 ::-moz-selection {
   color: #fff;
-  background: #e84b11;
+  background: #009AC7;
   text-shadow: none; }
 
 .reveal .slides > section,
@@ -171,6 +171,13 @@ body {
 
 .reveal-header .header-logo {
     width: 280px;  }
+
+.revesl h1.title {
+      background-image: "./UoALogoDarkBlueRGBLandscape.png";
+      background-repeat: no-repeat;
+      background-position: left, right;
+      background-size: 200px, 200px;
+    }
 
 /*********************************************
  * OTHER
@@ -310,20 +317,20 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #e84b11;
+  color: #009AC7;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease; }
 
 .reveal a:hover {
-  color: #e84b11;
+  color: #009AC7;
   text-shadow: none;
   border: none; }
 
 .reveal .roll span:after {
   color: #fff;
-  background: #e84b11; }
+  background: #009AC7; }
 
 /*********************************************
  * IMAGES
@@ -352,14 +359,14 @@ body {
  * NAVIGATION CONTROLS
  *********************************************/
 .reveal .controls {
-  color: #e84b11; }
+  color: #009AC7; }
 
 /*********************************************
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
-  color: #e84b11; }
+  color: #009AC7; }
 
 .reveal .progress span {
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
@@ -368,4 +375,4 @@ body {
 
 .reveal .progress {
   z-index: 1000;
-  color: #e84b11; }
+  color: #009AC7; }

@@ -50,6 +50,10 @@ format:
 - There are shortcuts, workarounds, cheat sheet and we will provide you with PhD thesis template 
 - There are more sessions at this year's ResBaz, for now, we will provide you with some background, Chris will teach you the basics in his hands-on session and Eirian will take it a step further
 
+# Cost-benefit Tradeoff
+- So some/many of you are planning to use MSWord?
+- Have you heard one out the many horror stories about someone almost stopping the 
+
 # What is $\LaTeX$ 
 - Pronounciation: /ˈlɑːtɛk/ or /ˈleɪtɛk/ 
 - $\LaTeX$ is a typesetting system and has been around for almost 40 years (since 1984)
