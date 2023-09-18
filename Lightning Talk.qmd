@@ -45,6 +45,8 @@ format:
       - line-highlight
 editor:
   render-on-save: true
+  # execute:
+  #   echo: false
 --- 
 # to do
 - think about more visualisations
@@ -89,7 +91,8 @@ editor:
 :::: {.columns}
 
 ::: {.column width="50%"}
-Pariticpants' Background
+
+<!-- Pariticpants' Background -->
 ```{python}
 import plotly.express as px
 import pandas as pd
@@ -108,12 +111,12 @@ option_counts_df = pd.DataFrame({'Option': option_counts.index, 'Count': option_
 
 fig = px.pie(option_counts_df, values='Count', names='Option')
 fig.update_layout(
-    # title="Pariticpants' Background",
+    title="Pariticpants' Background",
 #     # xaxis_title="X Axis Title",
 #     # yaxis_title="Y Axis Title",
 #     # legend_title="Legend Title",
     font=dict(
-        family="Courier New, monospace",
+        family="Verdana",
         size=18,
         # color="RebeccaPurple"
     )
@@ -124,7 +127,7 @@ fig.show()
 :::
 
 ::: {.column width="50%"}
-Pariticpants' Operating Systems
+<!-- Pariticpants' Operating Systems -->
 ```{python}
 import plotly.express as px
 import pandas as pd
@@ -134,7 +137,7 @@ import plotly.io as pio
 # Read data from the CSV file
 df = pd.read_csv('./InputData.csv')
 df = df.drop([0, 1])
-df
+# df
 option_counts = df['Q2'].value_counts()
 # Create a DataFrame from the value_counts() result
 option_counts_df = pd.DataFrame({'Option': option_counts.index, 'Count': option_counts.values})
@@ -144,12 +147,12 @@ option_counts_df = pd.DataFrame({'Option': option_counts.index, 'Count': option_
 
 fig = px.pie(option_counts_df, values='Count', names='Option')
 fig.update_layout(
-    # title="Pariticpants' Background",
+    title="Pariticpants' Operating System",
 #     # xaxis_title="X Axis Title",
 #     # yaxis_title="Y Axis Title",
 #     # legend_title="Legend Title",
     font=dict(
-        family="Courier New, monospace",
+        family="Verdana",
         size=18,
         # color="RebeccaPurple"
     )
@@ -170,7 +173,6 @@ import plotly.graph_objects as go
 # df.describe()
 
 
-
 # Create a box plot using Plotly
 fig = go.Figure(data=[go.Box(y=df['Q3_1'],
                              boxpoints='all',   # can also be 'outliers', 'suspectedoutliers', or False
@@ -178,53 +180,85 @@ fig = go.Figure(data=[go.Box(y=df['Q3_1'],
                              pointpos=-1.8      # relative position of points with respect to the box
                             )])
 
-# TO DO CHECK DOCS FOR UNITS
-# fig.update_yaxes(range=[0, 100])  # Replace max(column_data) with the desired upper limit if needed
+# Force Scale to 0-100
 fig.update_layout(yaxis_range=[0,100])
 
-# mean_value_column_data = df['Q3_1'].mean()
+
 # df['Q3_1'].apply(type).value_counts()
 df['Q3_1'] = df['Q3_1'].astype(float)
 mean_value = df.Q3_1.mean()
 # print(df.Q3_1.mean())
 median_value = df.Q3_1.median()
 
-# # Add horizontal lines for mean and median
-# fig.add_trace(go.Scatter(x=[1], y=[mean_value], mode='lines+text', name='Mean', text=[f'Mean: {mean_value:.2f}']))
-# fig.add_trace(go.Scatter(x=[1], y=[median_value], mode='lines+text', name='Median', text=[f'Median: {median_value:.2f}']))
 
-# give me a horizontal line indicating the mean value
-fig.add_shape(
-  type="line",
-  xref="paper", yref="y", x0=.5, y0=mean_value-4*stddev ,
-  x1=.7, y1=mean_value+4*stddev ,
-  color="#69b3a2")
-  # give me another one at the median value
-  fig.add_shape(
-      type="line",
-  xref="paper", yref="y", x0=.5, y0=median_value-4*stddev ,
-  x1=.7, y1=median_value+4*stddev ,
-  color="#69b3a2")
 
-# Show the box plot
+fig.update_layout(
+    title="I felt comfortable learning in this workshop",
+#     # xaxis_title="X Axis Title",
+#     # yaxis_title="Y Axis Title",
+#     # legend_title="Legend Title",
+    font=dict(
+        family="Verdana",
+        size=18,
+        # color="RebeccaPurple"
+    )
+)
+
+# # Show the box plot
 fig.show()
 ```
-
 ```{python}
-import pandas as pd
-import numpy as np
+import plotly.graph_objects as go
+df2 = pd.read_csv('./InputData.csv')
 
-# Create a sample DataFrame with a column named "column_data" containing NaN values
-data = {'column_data': [1, 2, np.nan, 4, 5]}
-df = pd.DataFrame(data)
+# List of column names you want to plot
+columns_to_plot = ['Q3_1', 'Q3_2', 'Q3_3', 'Q3_4', 'Q3_5', 'Q3_6']
 
-# Calculate the mean for the "column_data" column
+# Convert the columns to float (if needed)
+for column in columns_to_plot:
+    df[column] = df[column].astype(float)
+
+# String to be stripped from each element
+string_to_strip = 'Please rate your level of agreement with the following statements (0 = complete disagreement, 100 = complete agreement). - '
+
+# Strip the string from the column and print
+df2['Column1'] = df2[column].str.replace(string_to_strip, '', case=False)  # case=False makes it case-insensitive
+print(df)
+
+# Create a subplot for each column
+subplots = []
+for column in columns_to_plot:
+    subplot = go.Box(y=df[column],
+                     boxpoints='all',   # can also be 'outliers', 'suspectedoutliers', or False
+                     jitter=0.3,        # add some jitter for better separation between points
+                     pointpos=-1.8,     # relative position of points with respect to the box
+                     name=df2.loc[0,column]
+                     )       # set the name for the legend
+    subplots.append(subplot)
 
 
-# Convert the mean value to a percentage and print it
-mean_value_percentage = mean_value_column_data * 100
-print("Mean for column 'column_data' as a percentage:", "{:.2f}%".format(mean_value_percentage))
 
+# Create a figure with subplots
+fig = go.Figure(data=subplots)
+
+# Force Scale to 0-100
+fig.update_layout(yaxis_range=[0, 100])
+
+
+
+# Customize the layout
+fig.update_layout(
+    title="Box Plots for Multiple Columns",
+    xaxis_title="Columns",
+    yaxis_title="Values",
+    font=dict(
+        family="Verdana",
+        size=6,
+    )
+)
+
+# Show the box plots
+fig.show()
 ```
 # Reflection on Run #1 and adaption
 - The learning curve appeared too steep. From no coding to refined DL approaches in a few days appeared too challenging
@@ -254,25 +288,74 @@ print("Mean for column 'column_data' as a percentage:", "{:.2f}%".format(mean_va
 - the decision to teach Python at SW Carp was deemed good
 
 
-## Carbon_Dioxide
 
-```{python}
-import plotly.express as px
-import numpy
+<!-- # test
+```{ojs}
+import {Plotly.js}
+import { PieChartJS } from "./PieChartJS.js";
+PieChartJS
+``` -->
 
-import plotly.graph_objects as go
 
-labels = ['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen']
-values = [4500, 2500, 1053, 500]
+# test 2
 
-# pull is given as a fraction of the pie radius
-fig = go.Figure(data=[go.Pie(labels=labels, values=values, pull=[0, 0, 0.2, 0])])
-fig.show()
-```
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/21.0.0/tween.umd.js"></script>
+<div id="plot"></div>
 
-## Hydrogen
+<script>
+  var data = [{
+    values: [19, 26, 55],
+    labels: ['Residential', 'Non-Residential', 'Utility'],
+    pull: [0, 0, 0],
+    type: 'pie',
+    automargin: true
+  }];
 
-```{python}
-fig = go.Figure(data=[go.Pie(labels=labels, values=values, pull=[0, 0.2, 0, 0])])
-fig.show()
-```
+  var layout = {
+    height: "100%",
+    width: "100%"
+  };
+
+  var plot = document.getElementById('plot')
+  Plotly.newPlot(plot, data, layout);
+
+  window.tween = null;
+
+  function tween_function(d, from=0, to=0.5) {
+    var tweenValue = {pull: from}
+    window.tween = new TWEEN.Tween(tweenValue, false)
+    .to({pull: to}, 300)
+    .easing(TWEEN.Easing.Quadratic.InOut)
+    .onUpdate(() => {
+      var pull = [0,0,0]
+      pull[d.pointNumber] = tweenValue.pull
+      d.data.pull = pull
+      Plotly.restyle(plot, {
+        marker: {
+          pull: pull
+        }
+      });
+    }).start()
+  }
+
+  function animate(time) {
+    if (window.tween) {
+      window.tween.update(time)
+    }
+    requestAnimationFrame(animate)
+  }
+  animate()
+
+  plot.on('plotly_hover', function(data){
+    //if (tween && tween.isPlaying()) return
+    var d = data.points[0]
+    tween_function(d)
+  });
+
+  plot.on('plotly_unhover', function(data) {
+    if (tween && tween.isPlaying()) return
+    var d = data.points[0]
+    tween_function(d, 0.5, 0)
+  })
+</script>
