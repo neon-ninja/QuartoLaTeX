@@ -1,0 +1,110 @@
+---
+title: "Lighning talk"
+subtitle: "Developing a Carpentries-style Machine Learning workshop"
+author: "Dr. Jens Brinkmann"
+institute: "The University of Auckland"
+# logo-container: "ResBaz_transparent_Logo_cropped.svg"
+date: 17/10/2023
+date-format: full
+# bibliography: refs.bib
+from: markdown+emoji
+# embed-resources: false
+format:
+  revealjs:
+    # number-sections: true
+    theme: robot-lung2 2.scss
+    # css: ./logo.css
+    # disableLayout: true
+    navigation-mode: vertical
+    controls-layout: bottom-right
+    controls-tutorial: true
+    transition: convex
+    width: 1600
+    height: 900
+    margin: 0.2
+    logo: "./UoALogoDarkBlueRGBLandscape.png"
+    # background-image: ./ResBaz_transparent_Logo_cropped.svg
+    # background-opacity: 0.5
+    # background-position: bottom 10px right 20px
+    # background-size: contain
+    # data-background-repeat: no-repeat
+    # background-size: 80px
+    # background-repeat: no-repeat
+    # background-position: 0% 100%
+    # logo: ResBaz_transparent_cropped.svg
+    # self_contained: false
+    reveal_plugins: ["menu"]
+    reveal_options:
+      menu:
+        numbers: true
+    header: Developing a Carpentries-style Machine Learning workshop 
+    # header-logo: UoALogoDarkBlueRGBLandscape.png
+    hide-from-titleSlide: all
+    filters:
+      - reveal-header
+      - line-highlight
+editor:
+  render-on-save: true
+  # execute:
+  #   echo: false
+---
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/21.0.0/tween.umd.js"></script>
+<div id="plot"></div>
+<script>
+  var data = [{
+    values: [19, 26, 55],
+    labels: ['Residential', 'Non-Residential', 'Utility'],
+    pull: [0, 0, 0],
+    type: 'pie',
+    automargin: true
+  }];
+
+  var layout = {
+    height: "100%",
+    width: "100%"
+  };
+
+  var plot = document.getElementById('plot')
+  Plotly.newPlot(plot, data, layout);
+
+  window.tween = null;
+
+  function tween_function(d, from=0, to=0.5) {
+    var tweenValue = {pull: from}
+    window.tween = new TWEEN.Tween(tweenValue, false)
+    .to({pull: to}, 300)
+    .easing(TWEEN.Easing.Quadratic.InOut)
+    .onUpdate(() => {
+      var pull = [0,0,0]
+      pull[d.pointNumber] = tweenValue.pull
+      d.data.pull = pull
+      Plotly.restyle(plot, {
+        marker: {
+          pull: pull
+        }
+      });
+    }).start()
+  }
+
+  function animate(time) {
+    if (window.tween) {
+      window.tween.update(time)
+    }
+    requestAnimationFrame(animate)
+  }
+  animate()
+
+  plot.on('plotly_hover', function(data){
+    //if (tween && tween.isPlaying()) return
+    var d = data.points[0]
+    tween_function(d)
+  });
+
+  plot.on('plotly_unhover', function(data) {
+    if (tween && tween.isPlaying()) return
+    var d = data.points[0]
+    tween_function(d, 0.5, 0)
+  })
+</script>
