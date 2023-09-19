@@ -1,16 +1,18 @@
 ---
-title: "Lighning talk"
-subtitle: "Developing a Carpentries-style Machine Learning workshop"
+title: "Developing a Carpentries-style Machine Learning workshop"
+subtitle: "Lighning talk ⚡️"
 author: "Dr. Jens Brinkmann"
 institute: "The University of Auckland"
 # logo-container: "ResBaz_transparent_Logo_cropped.svg"
-date: 17/10/2023
+date: 10/17/2023
 date-format: full
+
 # bibliography: refs.bib
 from: markdown+emoji
 # embed-resources: false
 format:
   revealjs:
+    # tbl-cap-location: bottom
     # number-sections: true
     theme: robot-lung2 2.scss
     # css: ./logo.css
@@ -22,7 +24,13 @@ format:
     width: 1600
     height: 900
     margin: 0.2
-    logo: "./UoALogoDarkBlueRGBLandscape.png"
+    # logo: "./UoALogoDarkBlueRGBLandscape.png"
+    title-slide-attributes:
+        data-background-image: UoALogoDarkBlueRGBLandscape.png
+        data-background-size: 20%
+        # data-background-postion: right
+        data-background-position: 95% 76%
+        # data-background-position: bottom 10px right 20px
     # background-image: ./ResBaz_transparent_Logo_cropped.svg
     # background-opacity: 0.5
     # background-position: bottom 10px right 20px
@@ -38,16 +46,20 @@ format:
       menu:
         numbers: true
     header: Developing a Carpentries-style Machine Learning workshop 
-    # header-logo: UoALogoDarkBlueRGBLandscape.png
+    header-logo: UoALogoDarkBlueRGBLandscape.png
     hide-from-titleSlide: all
     filters:
       - reveal-header
       - line-highlight
+    
 editor:
   render-on-save: true
   # execute:
   #   echo: false
+
 --- 
+
+
 # to do
 - think about more visualisations
 - AI generated!
@@ -60,22 +72,23 @@ editor:
 
 - ML/AI are without a doubt a big topic
 - Empowering reserachers to use relevant approaches in their work is very rewarding, but also challenging
-- The Carpentries (LINK) offer a proven teaching style particularly targeted at participants with limited IT background
+- [The Carpentries](https://carpentries.org/)  offer a proven teaching style also supporting participants with limited IT experience
+  - ![The Carpentries](TheCarpentries.svg)
   - core aspects are live-coding, a positive attitude not anticipating prerequirments and participant invovlement
-- The CeR (Centre for eResearch) at the University of Auckland acquired funding to further develop and run a series of workshops
-- These are referred to as ML-Carp
-- A significant deviation from the Carpentries material was the choice of Goolge Colab (picture) over local Python installs. The intention being: Focus efforts on the core/theory/underlying aspects of ML, avoid trouble-shooting and losing participants at various stages/during the workshop
+- The [CeR (Centre for eResearch)](http://eresearch.auckland.ac.nz/) at the University of Auckland acquired funding to further develop and run a series of workshops, referred to as *ML-Carp*
+- [Goolge Colab](https://colab.research.google.com/) ![Colab](./Google_Colaboratory_SVG_Logo.svg) was used over local Python installs to focus attention on content
 
-# Composition of the week-long half-day workshop
+# Lesson Overview
 
-- Afternoon 1 and 2: *Introduction to Python*
-  - an existing and iteratively refined set of lessons 
-- Afternoon 3 and 4: *Machine Learning*
-  - while the Carpentries Incubator shows various (competing/overlapping) lessons in early stage (pre-alpha, alpha) exist, none of these has emerged to a more mature status
-  - substantial rework was done (maybe show a git diff screenshot?)
-- Afternoon 5: Deep Learning
-  - a beta workshop existed in the Carpentries incubator
-  - some refinement (git diff?)
+
+| Lesson Title                                       | Status                                                                                       | Run #1   | Run #2                    |   |
+|----------------------------------------------------|----------------------------------------------------------------------------------------------|----------|---------------------------|---|
+| Programming with Python                            | [Released](https://swcarpentry.github.io/python-novice-inflammation/)                        | Mon, Tue |             -             |   |
+| Introduction to Machine Learning with Scikit Learn | [Alpha](https://mike-ivs.github.io/machine-learning-novice-sklearn/02-regression/index.html) | Wed, Thu |  Mon, Tue *(+optimisation)* |   |
+| Introduction to Deep Learning                      | [Beta](https://carpentries-incubator.github.io/deep-learning-intro/aio.html)                 |    Fri   |  Wed, Thu *(+optimisation)* |   |
+
+*Each session took place on an afternoon for 4-5.*
+
 
 # Run #1 (from day x to y)
 -  Mainly statistics here (40 people, pie chart what faculty, ...)
@@ -310,6 +323,7 @@ fig.show()
     - Slack sub channel with targeted support
     - Kaggle?
     - VSC and local Python/GPU/Nectar/... 
+    - ![Comparison](ComparisonRevRun1And2.jpg) TODO: make this appear and disappear
   
   # Comparing Run #1 and #2: What metrics and people say
   - what the numbers say 

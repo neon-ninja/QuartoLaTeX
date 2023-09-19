@@ -46,8 +46,14 @@ format:
 editor:
   render-on-save: true
   # execute:
-  #   echo: false
+    # echo: true
 ---
+
+# Test 1
+
+{{< embed Plots.ipynb#one >}}
+
+# Test 2
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/21.0.0/tween.umd.js"></script>
