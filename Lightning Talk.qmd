@@ -324,7 +324,25 @@ fig.show()
     - Kaggle?
     - VSC and local Python/GPU/Nectar/... 
     - ![Comparison](ComparisonRevRun1And2.jpg) TODO: make this appear and disappear
-  
+
+# What participants of Run #1 said
+## What 1 thing did you like and would want to see in future workshops?
+- *"apply these ML techniques on the different field"*
+  - hard to achieve, focus on underlying theory
+- *"slower pace"*
+  - removed Python from curriculum 
+- *"some research paper example?"*
+  - hard
+- *"add some quick group exercise session or quiz"*
+  - more links/examples after the run
+- *"many people were online to help the students"*
+  - continued with many helpers
+
+## What 1 thing you do think we could do better?
+- too fast
+- separate Python 
+- adhering to break schedule
+
   # Comparing Run #1 and #2: What metrics and people say
   - what the numbers say 
     - more people signed up (word of mouth/positive experince being shared?)
